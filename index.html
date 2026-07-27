@@ -654,12 +654,10 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
     var nav = document.querySelector('.an-jump-nav');
     var pad = inFrame ? 84 : ((nav ? nav.offsetHeight : 0) + 6);   /* in-frame: clear the host page's fixed nav */
     var y = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - pad);
-    var scrollsInternally = document.documentElement.scrollHeight > window.innerHeight + 4;
-    if (scrollsInternally){
-      window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
-    } else {
-      anScrollHostTo(y);
-    }
+    /* One path for every context: scrollIntoView on the sentinel scrolls EVERY scrollable
+       ancestor natively (the inner document if it can move, then the host page). No mode
+       detection: near-equal frame/content heights broke the internal-vs-host branch in the CMS. */
+    anScrollHostTo(y);
     if (inFrame){ try { window.parent.postMessage({ an_jump: y }, '*'); } catch(e) {} }
   }
   document.querySelectorAll('[data-jump]').forEach(function(btn){
