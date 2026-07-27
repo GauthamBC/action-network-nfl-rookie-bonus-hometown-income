@@ -29,10 +29,10 @@
   --an-shadow-strong:0 22px 58px rgba(16,24,32,.14);
 }
 html,body{margin:0;padding:0;background:var(--an-bg);scroll-behavior:smooth;}
-html{scrollbar-width:thin;scrollbar-color:var(--an-green) #e9f4f1;}
+html{scrollbar-width:thin;scrollbar-color:var(--an-green-dark) #e9f4f1;}
 html::-webkit-scrollbar{width:7px;height:7px;}
 html::-webkit-scrollbar-track{background:#e9f4f1;}
-html::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--an-green),var(--an-green-dark));border:1px solid #e9f4f1;border-radius:999px;}
+html::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--an-green-dark),#00543a);border:1px solid #e9f4f1;border-radius:999px;}
 *,*::before,*::after{box-sizing:border-box;}
 body{font-family:var(--an-serif);color:var(--an-text);font-size:17px;line-height:1.65;}
 h1,h2,h3,h4,.an-display{font-family:var(--an-display);}
@@ -148,7 +148,10 @@ h1,h2,h3,h4,.an-display{font-family:var(--an-display);}
 .an-chip{appearance:none;cursor:pointer;background:#fff;border:1px solid var(--an-border-2);padding:10px 16px;font-family:var(--an-display);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--an-muted);transition:all .15s;}
 .an-chip:hover{border-color:var(--an-green);color:var(--an-green-dark);}
 .an-chip.active{background:var(--an-navy);border-color:var(--an-navy);color:#fff;}
-.an-table-scroll{overflow-x:auto;border:1px solid var(--an-border);box-shadow:var(--an-shadow);}
+.an-table-scroll{overflow-x:auto;border:1px solid var(--an-border);box-shadow:var(--an-shadow);scrollbar-width:thin;scrollbar-color:var(--an-green-dark) #e9f4f1;}
+.an-table-scroll::-webkit-scrollbar{height:9px;width:9px;}
+.an-table-scroll::-webkit-scrollbar-track{background:#e9f4f1;}
+.an-table-scroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--an-green-dark),#00543a);border:1px solid #e9f4f1;border-radius:999px;}
 table.an-table{width:100%;border-collapse:collapse;min-width:880px;font-size:14.5px;background:#fff;}
 .an-table thead th{position:sticky;top:0;background:var(--an-navy);color:#fff;font-family:var(--an-display);font-weight:700;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:13px 12px;white-space:nowrap;cursor:pointer;user-select:none;z-index:2;}
 .an-table thead th:hover{background:var(--an-navy-2);}
@@ -629,13 +632,35 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
     ho.observe(document.querySelector('.an-band-dark'));
   } else { heroAnimate(); }
 
-  /* ---------- jump nav ---------- */
+  /* ---------- jump nav: works standalone AND inside a fixed-height cross-origin iframe ----------
+     Inside the embed the inner document usually cannot scroll (the host page does), so
+     window.scrollTo is a no-op. Instead we place an invisible 1px sentinel at the target Y
+     and scrollIntoView it: the browser scrolls the host page natively, no host-side script needed. */
+  var inFrame = (function(){ try { return window.parent !== window; } catch(e){ return true; } })();
+  var anScrollSentinel = null;
+  function anScrollHostTo(y){
+    if (!anScrollSentinel){
+      anScrollSentinel = document.createElement('div');
+      anScrollSentinel.setAttribute('aria-hidden','true');
+      anScrollSentinel.style.cssText = 'position:absolute;left:0;top:0;width:1px;height:1px;margin:0;padding:0;border:0;pointer-events:none;visibility:hidden;';
+      document.body.appendChild(anScrollSentinel);
+    }
+    anScrollSentinel.style.top = Math.max(0, y) + 'px';
+    anScrollSentinel.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  }
   function jumpTo(id){
     var el = document.getElementById(id);
     if (!el) return;
     var nav = document.querySelector('.an-jump-nav');
-    var y = el.getBoundingClientRect().top + window.pageYOffset - (nav ? nav.offsetHeight : 0) - 6;
-    window.scrollTo({ top: Math.max(0, y), behavior: reduced ? 'auto' : 'smooth' });
+    var pad = inFrame ? 84 : ((nav ? nav.offsetHeight : 0) + 6);   /* in-frame: clear the host page's fixed nav */
+    var y = Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - pad);
+    var scrollsInternally = document.documentElement.scrollHeight > window.innerHeight + 4;
+    if (scrollsInternally){
+      window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
+    } else {
+      anScrollHostTo(y);
+    }
+    if (inFrame){ try { window.parent.postMessage({ an_jump: y }, '*'); } catch(e) {} }
   }
   document.querySelectorAll('[data-jump]').forEach(function(btn){
     btn.addEventListener('click', function(){ jumpTo(btn.getAttribute('data-jump')); });
