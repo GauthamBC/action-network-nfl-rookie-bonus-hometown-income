@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Action Network | What Every First-Round Rookie's Signing Bonus Is Worth Back Home</title>
+<meta name="description" content="Action Network compares every 2026 first-round rookie's projected signing bonus with the median household income in his verified hometown.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --an-green:#00b67a;
+  --an-green-bright:#00e09a;
+  --an-green-dark:#00865b;
+  --an-green-soft:#e8fff6;
+  --an-navy:#101820;
+  --an-navy-2:#152630;
+  --an-bg:#ffffff;
+  --an-bg2:#f7faf8;
+  --an-border:#dfe7e3;
+  --an-border-2:#cfd8d3;
+  --an-text:#20252a;
+  --an-muted:#6d7880;
+  --an-display:'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
+  --an-serif:'Source Serif 4', Georgia, serif;
+  --an-shadow:0 16px 38px rgba(16,24,32,.08);
+  --an-shadow-strong:0 22px 58px rgba(16,24,32,.14);
+}
+html,body{margin:0;padding:0;background:var(--an-bg);scroll-behavior:smooth;}
+html{scrollbar-width:thin;scrollbar-color:var(--an-green) #e9f4f1;}
+html::-webkit-scrollbar{width:7px;height:7px;}
+html::-webkit-scrollbar-track{background:#e9f4f1;}
+html::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--an-green),var(--an-green-dark));border:1px solid #e9f4f1;border-radius:999px;}
+*,*::before,*::after{box-sizing:border-box;}
+body{font-family:var(--an-serif);color:var(--an-text);font-size:17px;line-height:1.65;}
+h1,h2,h3,h4,.an-display{font-family:var(--an-display);}
+.an-page{width:100%;overflow-x:clip;}
+.an-wrap{max-width:none;margin:0;padding:0 clamp(16px,2.4vw,40px);}
+
+/* ============ HERO BAND (full-bleed dark) ============ */
+.an-band-dark{position:relative;background:
+  radial-gradient(1100px 520px at 82% -10%, rgba(0,224,154,.16), transparent 55%),
+  radial-gradient(700px 420px at -8% 108%, rgba(0,182,122,.12), transparent 60%),
+  linear-gradient(150deg,#0b1218 0%, var(--an-navy) 46%, var(--an-navy-2) 100%);
+  color:#fff;overflow:hidden;}
+.an-band-dark::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(1200px 600px at 70% 20%, #000 0%, transparent 78%);}
+.an-band-inner{position:relative;z-index:2;padding:clamp(28px,3.6vw,52px) clamp(16px,2.4vw,40px) clamp(30px,3.8vw,54px);}
+.an-band-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px;}
+.an-logo-lockup{display:inline-flex;align-items:center;gap:0;}
+.an-logo-svg{height:28px;width:auto;display:block;}
+.an-logo-circle{fill:none;stroke:var(--an-green-bright);stroke-width:3.4;}
+.an-logo-check{fill:none;stroke:var(--an-green-bright);stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;}
+.an-logo-word{font-family:var(--an-display);font-weight:900;font-size:21px;letter-spacing:.14em;fill:#fff;}
+.an-kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--an-display);font-weight:700;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:var(--an-green-bright);margin:0;}
+.an-kicker::before{content:"";width:34px;height:2px;background:var(--an-green-bright);}
+.an-hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:clamp(26px,3.6vw,58px);align-items:center;}
+.an-hero-copy h1{margin:0 0 16px;font-weight:900;font-size:clamp(38px,5vw,72px);line-height:.98;letter-spacing:.005em;text-transform:uppercase;}
+.an-hero-copy h1 .u{color:var(--an-green-bright);}
+.an-dek{margin:0;max-width:none;font-size:clamp(16.5px,1.4vw,19.5px);line-height:1.62;color:#d5dee2;}
+.an-byline{display:flex;align-items:center;gap:12px;margin-top:22px;font-family:var(--an-display);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);}
+.an-byline b{color:#fff;font-weight:800;}
+.an-byline i{font-style:normal;color:var(--an-green-bright);}
+/* hero stat tiles */
+.an-hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);margin-top:clamp(20px,2.6vw,30px);}
+.an-hero-stat{background:rgba(16,24,32,.66);padding:18px 18px 16px;}
+.an-hero-stat b{display:block;font-family:var(--an-display);font-weight:900;font-size:clamp(28px,3vw,44px);line-height:1;letter-spacing:-.01em;color:#fff;white-space:nowrap;}
+.an-hero-stat b .u{color:var(--an-green-bright);}
+.an-hero-stat span.lbl{display:block;margin-top:7px;font-family:var(--an-display);font-weight:600;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+/* hero scoreboard: the No. 1 card */
+.an-score{position:relative;border:1px solid rgba(255,255,255,.16);border-left:5px solid var(--an-green-bright);background:rgba(255,255,255,.045);backdrop-filter:blur(3px);padding:clamp(20px,2.4vw,28px) clamp(20px,2.6vw,30px);box-shadow:0 30px 80px rgba(0,0,0,.3);}
+.an-score::after{content:"";position:absolute;top:-34px;right:-34px;width:96px;height:96px;background:rgba(0,224,154,.12);transform:rotate(45deg);pointer-events:none;}
+.an-score-top{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--an-display);font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+.an-score-top .tag{background:var(--an-green);color:#04120c;padding:5px 10px;font-weight:800;letter-spacing:.12em;}
+.an-score-num{margin-top:20px;font-family:var(--an-display);font-weight:900;font-size:clamp(58px,6vw,84px);line-height:.9;letter-spacing:-.02em;color:#fff;}
+.an-score-num .x{color:var(--an-green-bright);font-size:.55em;margin-left:4px;}
+.an-score-name{margin-top:10px;font-family:var(--an-display);font-weight:800;font-size:24px;letter-spacing:.03em;text-transform:uppercase;}
+.an-score-sub{margin:4px 0 0;font-size:14.5px;color:rgba(255,255,255,.66);}
+.an-score-compare{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:12px;}
+.an-cmp-row{display:grid;grid-template-columns:118px 1fr;align-items:center;gap:12px;}
+.an-cmp-lbl{font-family:var(--an-display);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62);}
+.an-cmp-track{position:relative;height:16px;background:rgba(255,255,255,.08);}
+.an-cmp-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--an-green-dark),var(--an-green-bright));transition:width 1.1s cubic-bezier(.2,.7,.2,1);}
+.an-cmp-fill.thin{background:#8fa0aa;}
+.an-cmp-val{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-family:var(--an-display);font-weight:800;font-size:13px;letter-spacing:.06em;color:#fff;}
+.an-score-note{margin:14px 0 0;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.5);}
+
+/* ============ JUMP NAV ============ */
+.an-jump-nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--an-border);}
+.an-jump-track{padding:0 clamp(16px,2.4vw,40px);display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;}
+.an-jump-track::-webkit-scrollbar{display:none;}
+.an-jump-label{font-family:var(--an-display);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--an-muted);padding-right:12px;flex:0 0 auto;}
+.an-jump-link{flex:0 0 auto;appearance:none;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;font-family:var(--an-display);font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--an-text);padding:16px 12px 13px;transition:color .18s,border-color .18s;}
+.an-jump-link:hover{color:var(--an-green-dark);}
+.an-jump-link.active{color:var(--an-green-dark);border-bottom-color:var(--an-green);}
+.an-jump-link:focus-visible,.an-btn:focus-visible,.an-chip:focus-visible,.an-sep-btn:focus-visible{outline:3px solid var(--an-green);outline-offset:2px;}
+
+/* ============ SECTIONS ============ */
+.an-section{padding:clamp(34px,4.4vw,60px) 0;background:var(--an-bg);}
+.an-section.alt{background:var(--an-bg2);border-top:1px solid var(--an-border);border-bottom:1px solid var(--an-border);}
+.an-section-head{border-left:6px solid var(--an-green);padding-left:clamp(16px,2vw,24px);}
+.an-section-title{margin:0;font-weight:900;font-size:clamp(28px,3.4vw,44px);line-height:1.02;letter-spacing:.01em;text-transform:uppercase;color:var(--an-navy);}
+.an-section-sub{margin:10px 0 0;font-size:16.5px;line-height:1.65;color:var(--an-muted);max-width:none;}
+.an-prose{max-width:none;font-size:17.5px;line-height:1.75;}
+.an-prose p{margin:0 0 18px;}
+.an-prose strong{color:var(--an-navy);}
+.an-prose .num{font-family:var(--an-display);font-weight:800;color:var(--an-green-dark);font-size:1.08em;letter-spacing:.01em;}
+
+/* section separator + back to menu */
+.an-sep{display:flex;align-items:center;gap:18px;padding:clamp(10px,1.6vw,20px) clamp(16px,2.4vw,40px);background:var(--an-bg);}
+.an-sep.on-alt{background:var(--an-bg2);}
+.an-sep::before,.an-sep::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--an-border-2));}
+.an-sep::after{background:linear-gradient(90deg,var(--an-border-2),transparent);}
+.an-sep-btn{appearance:none;cursor:pointer;background:#fff;border:2px solid var(--an-green);color:var(--an-green-dark);font-family:var(--an-display);font-weight:800;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:10px 22px;display:inline-flex;align-items:center;gap:9px;transition:all .18s ease;}
+.an-sep-btn .up{display:inline-block;transition:transform .18s ease;}
+.an-sep-btn:hover{background:var(--an-green);color:#fff;}
+.an-sep-btn:hover .up{transform:translateY(-3px);}
+
+/* ============ KEY FINDINGS ============ */
+.an-kf-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:28px;}
+.an-kf-card{position:relative;background:#fff;border:1px solid var(--an-border);border-left:6px solid var(--an-green);display:grid;grid-template-columns:52px minmax(0,1fr);gap:8px 22px;align-items:start;padding:24px 26px;box-shadow:0 12px 28px rgba(16,24,32,.055);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;overflow:hidden;}
+.an-kf-card::after{content:"";position:absolute;top:-38px;right:-38px;width:110px;height:110px;background:rgba(0,182,122,.09);transform:rotate(45deg);pointer-events:none;}
+.an-kf-card:hover{transform:translateX(6px);box-shadow:var(--an-shadow-strong);border-color:rgba(0,182,122,.4);}
+.an-kf-card.is-featured{border-left-color:var(--an-green-bright);background:linear-gradient(135deg, rgba(0,224,154,.14), transparent 46%), linear-gradient(140deg,#0c1a1c 0%, var(--an-navy-2) 60%, var(--an-navy) 100%);color:#fff;border-color:rgba(0,224,154,.35);}
+.an-kf-card.is-featured p{color:rgba(255,255,255,.85);}
+.an-kf-card.is-featured h3{color:#fff;}
+.an-kf-num{font-family:var(--an-display);font-weight:900;font-size:34px;line-height:1;color:rgba(0,134,91,.35);}
+.an-kf-card.is-featured .an-kf-num{color:rgba(0,224,154,.55);}
+.an-kf-card h3{margin:2px 0 6px;font-weight:800;font-size:21px;line-height:1.1;letter-spacing:.02em;text-transform:uppercase;color:var(--an-navy);}
+.an-kf-card p{margin:0;font-size:15.5px;line-height:1.6;color:var(--an-muted);}
+.an-kf-card p b{font-family:var(--an-display);font-weight:800;font-size:1.12em;color:var(--an-green-dark);letter-spacing:.02em;}
+.an-kf-card.is-featured p b{color:var(--an-green-bright);}
+/* how to read callout */
+.an-callout{margin-top:26px;background:var(--an-green-soft);border:1px solid rgba(0,182,122,.35);border-left:6px solid var(--an-green);padding:20px 24px;}
+.an-callout h4{margin:0 0 8px;font-weight:800;font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--an-green-dark);}
+.an-callout p{margin:0;font-size:15.5px;line-height:1.65;}
+.an-callout p+p{margin-top:8px;}
+
+/* ============ RANKING TABLE ============ */
+.an-rank-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:26px 0 16px;}
+.an-search{position:relative;flex:1 1 300px;max-width:440px;}
+.an-search input{width:100%;padding:12px 14px 12px 42px;border:1px solid var(--an-border-2);background:#fff;font-family:var(--an-serif);font-size:15.5px;color:var(--an-text);}
+.an-search input:focus{outline:3px solid rgba(0,182,122,.35);outline-offset:0;border-color:var(--an-green);}
+.an-search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--an-muted);fill:none;stroke-width:2;stroke-linecap:round;}
+.an-chip{appearance:none;cursor:pointer;background:#fff;border:1px solid var(--an-border-2);padding:10px 16px;font-family:var(--an-display);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--an-muted);transition:all .15s;}
+.an-chip:hover{border-color:var(--an-green);color:var(--an-green-dark);}
+.an-chip.active{background:var(--an-navy);border-color:var(--an-navy);color:#fff;}
+.an-table-scroll{overflow-x:auto;border:1px solid var(--an-border);box-shadow:var(--an-shadow);}
+table.an-table{width:100%;border-collapse:collapse;min-width:880px;font-size:14.5px;background:#fff;}
+.an-table thead th{position:sticky;top:0;background:var(--an-navy);color:#fff;font-family:var(--an-display);font-weight:700;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:13px 12px;white-space:nowrap;cursor:pointer;user-select:none;z-index:2;}
+.an-table thead th:hover{background:var(--an-navy-2);}
+.an-table thead th .arrow{display:inline-block;margin-left:5px;color:var(--an-green-bright);font-size:11px;opacity:0;transition:opacity .15s;}
+.an-table thead th.sorted .arrow{opacity:1;}
+.an-table tbody td{padding:12px 12px;border-bottom:1px solid var(--an-border);vertical-align:middle;}
+.an-table tbody tr{transition:background .15s;}
+.an-table tbody tr:hover{background:var(--an-green-soft);}
+.an-table tbody tr.podium{background:linear-gradient(90deg, rgba(0,224,154,.10), transparent 65%);}
+.an-table tbody tr.podium:hover{background:linear-gradient(90deg, rgba(0,224,154,.16), rgba(232,255,246,.7) 65%);}
+.an-td-rank{font-family:var(--an-display);font-weight:900;font-size:19px;color:var(--an-muted);width:52px;}
+tr.podium .an-td-rank{color:var(--an-green-dark);}
+.an-td-player strong{display:block;font-family:var(--an-display);font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:var(--an-navy);line-height:1.05;}
+.an-td-player small{display:block;margin-top:3px;font-size:12.5px;color:var(--an-muted);}
+.an-pick-chip{display:inline-block;background:var(--an-navy);color:#fff;font-family:var(--an-display);font-weight:800;font-size:12.5px;letter-spacing:.08em;padding:3px 8px;margin-bottom:3px;}
+.an-td-team small{display:block;font-size:12.5px;color:var(--an-muted);}
+.an-td-money{font-family:var(--an-display);font-weight:800;font-size:16.5px;letter-spacing:.02em;color:var(--an-navy);white-space:nowrap;}
+.an-td-income{white-space:nowrap;}
+.an-td-income small{display:block;font-size:11px;letter-spacing:.08em;color:var(--an-muted);}
+.an-mult{display:grid;grid-template-columns:1fr 62px;align-items:center;gap:10px;min-width:190px;}
+.an-mult-track{position:relative;height:12px;background:#e7efeb;}
+.an-mult-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--an-green-dark),var(--an-green));transition:width 1s cubic-bezier(.2,.7,.2,1);}
+tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--an-green-bright));}
+.an-mult-val{font-family:var(--an-display);font-weight:800;font-size:16px;color:var(--an-green-dark);text-align:right;white-space:nowrap;}
+.an-table-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;}
+.an-btn{appearance:none;cursor:pointer;border:2px solid var(--an-green);background:#fff;color:var(--an-green-dark);font-family:var(--an-display);font-weight:800;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;padding:11px 24px;display:inline-flex;align-items:center;gap:9px;transition:all .18s ease;}
+.an-btn:hover{background:var(--an-green);color:#fff;}
+.an-btn .ar{transition:transform .18s ease;}
+.an-btn:hover .ar{transform:translateY(2px);}
+.an-fineprint{margin:0;font-size:13px;line-height:1.6;color:var(--an-muted);max-width:none;}
+.an-empty{padding:26px;text-align:center;font-family:var(--an-display);font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase;color:var(--an-muted);background:#fff;border:1px dashed var(--an-border-2);margin-top:-1px;}
+
+/* ============ TOP-10 BAR CHART ============ */
+.an-bars{display:grid;gap:11px;margin-top:28px;}
+.an-bar-row{display:grid;grid-template-columns:34px minmax(130px,250px) 1fr 72px;align-items:center;gap:12px;}
+.an-bar-rank{font-family:var(--an-display);font-weight:900;font-size:18px;color:var(--an-muted);text-align:right;}
+.an-bar-row:nth-child(-n+3) .an-bar-rank{color:var(--an-green-dark);}
+.an-bar-name{font-family:var(--an-display);font-weight:700;font-size:16.5px;line-height:1.06;text-transform:uppercase;letter-spacing:.02em;color:var(--an-navy);}
+.an-bar-name small{display:block;font-family:var(--an-serif);font-size:11.5px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--an-muted);margin-top:2px;}
+.an-bar-track{position:relative;height:22px;background:#eef4f1;border:1px solid var(--an-border);}
+.an-bar-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--an-green-dark),var(--an-green) 70%,var(--an-green-bright));transition:width 1.1s cubic-bezier(.2,.7,.2,1);}
+.an-bar-row:nth-child(-n+3) .an-bar-fill{background:linear-gradient(90deg,var(--an-green),var(--an-green-bright));}
+.an-bar-val{font-family:var(--an-display);font-weight:800;font-size:17px;color:var(--an-green-dark);white-space:nowrap;}
+
+/* ============ METHODOLOGY ============ */
+.an-method{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px;}
+.an-step{position:relative;background:#fff;border:1px solid var(--an-border);border-top:5px solid var(--an-green);padding:22px 24px;box-shadow:0 12px 28px rgba(16,24,32,.05);transition:transform .2s ease,box-shadow .2s ease;}
+.an-step:hover{transform:translateY(-4px);box-shadow:var(--an-shadow-strong);}
+.an-step-num{font-family:var(--an-display);font-weight:900;font-size:15px;letter-spacing:.2em;color:var(--an-green-dark);}
+.an-step h3{margin:8px 0 8px;font-weight:800;font-size:20px;letter-spacing:.02em;text-transform:uppercase;color:var(--an-navy);line-height:1.1;}
+.an-step p{margin:0;font-size:15px;line-height:1.62;color:var(--an-muted);}
+.an-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:26px;}
+.an-note{background:var(--an-bg2);border:1px solid var(--an-border);border-left:5px solid var(--an-border-2);padding:16px 20px;font-size:14.5px;line-height:1.62;color:var(--an-muted);transition:border-color .18s;}
+.an-note:hover{border-left-color:var(--an-green);}
+.an-note b{display:block;font-family:var(--an-display);font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--an-navy);margin-bottom:5px;}
+
+/* ============ SOURCES ============ */
+.an-sources{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+.an-source{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--an-border-2);padding:10px 16px;font-family:var(--an-display);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--an-text);text-decoration:none;transition:all .16s ease;}
+.an-source::before{content:"";width:8px;height:8px;background:var(--an-green);transform:rotate(45deg);}
+.an-source:hover{border-color:var(--an-green);color:var(--an-green-dark);transform:translateY(-2px);box-shadow:var(--an-shadow);}
+
+/* ============ FOOTER ============ */
+.an-footer{background:var(--an-navy);color:rgba(255,255,255,.7);padding:clamp(36px,4.6vw,56px) 0;}
+.an-footer .an-logo-word{fill:#fff;}
+.an-footer p{margin:14px 0 0;font-size:14px;line-height:1.7;}
+.an-footer strong{color:#fff;}
+
+/* reveal on scroll */
+.an-reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+.an-reveal.is-visible{opacity:1;transform:translateY(0);}
+
+@media (max-width:960px){
+  .an-hero-grid{grid-template-columns:1fr;}
+  .an-hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .an-method,.an-notes{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  .an-bar-row{grid-template-columns:26px minmax(96px,150px) 1fr 58px;gap:8px;}
+  .an-bar-name{font-size:14px;}
+  .an-cmp-row{grid-template-columns:92px 1fr;}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .an-reveal{opacity:1;transform:none;transition:none;}
+  .an-mult-fill,.an-bar-fill,.an-cmp-fill{transition:none !important;}
+  .an-kf-card:hover,.an-step:hover,.an-source:hover{transform:none;}
+}
+</style>
+</head>
+<body>
+<div class="an-page">
+
+<!-- ============ HERO ============ -->
+<header class="an-band-dark" id="top">
+  <div class="an-band-inner">
+    <div class="an-band-top">
+      <div class="an-logo-lockup" aria-label="Action Network">
+        <svg class="an-logo-svg" viewBox="0 0 228 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Action Network">
+          <circle class="an-logo-circle" cx="13" cy="17" r="11"></circle>
+          <path class="an-logo-check" d="M8 17.3 l3.4 3.4 l6.8 -7.4"></path>
+          <text class="an-logo-word" x="30" y="22.4">ACTION NETWORK</text>
+        </svg>
+      </div>
+      <p class="an-kicker">NFL · 2026 Draft data study</p>
+    </div>
+    <div class="an-hero-grid">
+      <div class="an-hero-copy">
+        <h1>What every first-round rookie's signing bonus is worth <span class="u">back home</span></h1>
+        <p class="an-dek">We compared every 2026 first-round pick's projected signing bonus with the typical household income in his verified hometown. The result is a new way to see just how far a rookie's first NFL payday stretches.</p>
+        <p class="an-byline"><b>Action Network Research</b><i>·</i>Updated July 26, 2026<i>·</i>9 min read</p>
+        <div class="an-hero-stats" aria-label="Study summary">
+          <div class="an-hero-stat"><b><span class="cu" data-target="32">0</span></b><span class="lbl">First-round rookies analyzed</span></div>
+          <div class="an-hero-stat"><b>$<span class="cu" data-target="38.8" data-dec="1">0</span><span class="u">M</span></b><span class="lbl">Largest projected signing bonus</span></div>
+          <div class="an-hero-stat"><b><span class="cu" data-target="180.3" data-dec="1">0</span><span class="u">×</span></b><span class="lbl">Median hometown multiple</span></div>
+          <div class="an-hero-stat"><b><span class="cu" data-target="714">0</span><span class="u">×</span></b><span class="lbl">Gap between first and last</span></div>
+        </div>
+      </div>
+      <aside class="an-score" aria-label="Biggest hometown multiple">
+        <div class="an-score-top"><span>Biggest hometown multiple</span><span class="tag">Pick No. 5</span></div>
+        <div class="an-score-num"><span class="cu" data-target="779.3" data-dec="1">0</span><span class="x">×</span></div>
+        <div class="an-score-name">Arvell Reese</div>
+        <p class="an-score-sub">Ohio State · New York Giants · Cleveland, Ohio</p>
+        <div class="an-score-compare">
+          <div class="an-cmp-row">
+            <span class="an-cmp-lbl">Projected bonus</span>
+            <div class="an-cmp-track"><div class="an-cmp-fill" data-w="100"></div><span class="an-cmp-val">$31.8M</span></div>
+          </div>
+          <div class="an-cmp-row">
+            <span class="an-cmp-lbl">Hometown income</span>
+            <div class="an-cmp-track"><div class="an-cmp-fill thin" data-w="4"></div><span class="an-cmp-val">$40,801</span></div>
+          </div>
+        </div>
+        <p class="an-score-note">His projected bonus equals a year of income for roughly 779 Cleveland households.</p>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<!-- ============ JUMP NAV ============ -->
+<nav class="an-jump-nav" id="menu" aria-label="Jump to section">
+  <div class="an-jump-track">
+    <span class="an-jump-label">Jump to</span>
+    <button class="an-jump-link" data-jump="sec-findings">Key findings</button>
+    <button class="an-jump-link" data-jump="sec-ranking">Full ranking</button>
+    <button class="an-jump-link" data-jump="sec-chart">Top 10 chart</button>
+    <button class="an-jump-link" data-jump="sec-method">Methodology</button>
+    <button class="an-jump-link" data-jump="sec-sources">Sources</button>
+  </div>
+</nav>
+
+<!-- ============ INTRO ============ -->
+<section class="an-section" id="sec-intro">
+  <div class="an-wrap">
+    <div class="an-prose an-reveal">
+      <p>The first name called on draft night does not necessarily produce the biggest hometown payday. Cleveland native <strong>Arvell Reese</strong>, selected fifth, tops this ranking because his projected $31.8 million bonus equals a year of median household income for roughly <span class="num">779 Cleveland households</span>.</p>
+      <p>That puts him more than 158 households ahead of No. 1 pick Fernando Mendoza. The comparison shows how draft slot and local economics combine: two rookies can receive similarly extraordinary contracts, but those paydays carry very different weight in the places that shaped them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KEY FINDINGS ============ -->
+<section class="an-section alt" id="sec-findings">
+  <div class="an-wrap">
+    <div class="an-section-head an-reveal">
+      <h2 class="an-section-title">The headline numbers</h2>
+      <p class="an-section-sub">Four findings that reshape the draft order.</p>
+    </div>
+    <div class="an-kf-grid">
+      <article class="an-kf-card is-featured an-reveal">
+        <div class="an-kf-num">01</div>
+        <div>
+          <h3>Reese turns pick No. 5 into the top hometown payday</h3>
+          <p>His projected bonus equals a year of median income for <b>779.3 Cleveland households</b>, the largest multiple in the first round.</p>
+        </div>
+      </article>
+      <article class="an-kf-card an-reveal">
+        <div class="an-kf-num">02</div>
+        <div>
+          <h3>Mauigoa's American Samoa roots push him into the top four</h3>
+          <p>The No. 10 pick's $19.3 million projection covers a year of income for <b>572.1 households</b> in Ili'ili.</p>
+        </div>
+      </article>
+      <article class="an-kf-card an-reveal">
+        <div class="an-kf-num">03</div>
+        <div>
+          <h3>Irvine's higher income pulls the No. 2 pick down to 10th</h3>
+          <p>David Bailey owns the second-largest bonus estimate, but a <b>$136,719</b> median household income changes the local comparison.</p>
+        </div>
+      </article>
+      <article class="an-kf-card an-reveal">
+        <div class="an-kf-num">04</div>
+        <div>
+          <h3>Pick No. 31 lands in the top half</h3>
+          <p>Keldric Faulk ranks 15th: his $9.0 million projected bonus covers a year of median household income for <b>185.7 households</b> in Highland Home.</p>
+        </div>
+      </article>
+    </div>
+    <div class="an-callout an-reveal">
+      <h4>How to read this</h4>
+      <p><strong>779.3×</strong> means the projected signing bonus equals one year of median household income for roughly 779.3 households in the player's hometown.</p>
+      <p>The comparison is a snapshot, not a spending plan. Bonuses are gross contract figures and do not account for taxes, agent fees, payment timing or spending.</p>
+    </div>
+  </div>
+</section>
+
+<div class="an-sep"><button class="an-sep-btn" data-jump="menu"><span class="up">↑</span> Back to menu</button></div>
+
+<!-- ============ RANKING ============ -->
+<section class="an-section" id="sec-ranking">
+  <div class="an-wrap">
+    <div class="an-section-head an-reveal">
+      <h2 class="an-section-title">Complete first-round ranking</h2>
+      <p class="an-section-sub">Where rookie bonuses stretch furthest. Search by player, team, college, hometown or draft pick, and click any column header to sort.</p>
+    </div>
+    <div class="an-rank-tools an-reveal">
+      <label class="an-search">
+        <span class="sr-only" style="position:absolute;left:-9999px;">Search the ranking</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6"></circle><path d="M13.5 13.5 L18 18"></path></svg>
+        <input type="text" id="rankSearch" placeholder="Search the ranking" aria-label="Search the ranking">
+      </label>
+      <button class="an-chip active" id="chipTop">Top 10</button>
+      <button class="an-chip" id="chipAll">All 32</button>
+    </div>
+    <div class="an-table-scroll an-reveal">
+      <table class="an-table" id="rankTable">
+        <thead><tr>
+          <th data-key="rank" class="sorted">Rank<span class="arrow">▲</span></th>
+          <th data-key="player">Player<span class="arrow">▲</span></th>
+          <th data-key="pick">Pick / Team<span class="arrow">▲</span></th>
+          <th data-key="hometown">Verified hometown<span class="arrow">▲</span></th>
+          <th data-key="bonus">Projected bonus<span class="arrow">▲</span></th>
+          <th data-key="income">Median income<span class="arrow">▲</span></th>
+          <th data-key="multiple">Multiple<span class="arrow">▲</span></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="an-table-foot">
+      <p class="an-fineprint">Signing bonuses are rookie-scale estimates, not confirmed cash received. Income is the latest standardized hometown measure available under the methodology below. Ottawa's row is shown in Canadian dollars.</p>
+      <button class="an-btn" id="showBtn">Show all 32 rookies <span class="ar">↓</span></button>
+    </div>
+  </div>
+</section>
+
+<div class="an-sep"><button class="an-sep-btn" data-jump="menu"><span class="up">↑</span> Back to menu</button></div>
+
+<!-- ============ TOP 10 CHART ============ -->
+<section class="an-section alt" id="sec-chart">
+  <div class="an-wrap">
+    <div class="an-section-head an-reveal">
+      <h2 class="an-section-title">The top 10, drawn to scale</h2>
+      <p class="an-section-sub">Each bar shows a rookie's bonus-to-income multiple relative to Arvell Reese's first-round high of 779.3×.</p>
+    </div>
+    <div class="an-bars an-reveal" id="topBars"></div>
+  </div>
+</section>
+
+<div class="an-sep on-alt"><button class="an-sep-btn" data-jump="menu"><span class="up">↑</span> Back to menu</button></div>
+
+<!-- ============ METHODOLOGY ============ -->
+<section class="an-section" id="sec-method">
+  <div class="an-wrap">
+    <div class="an-section-head an-reveal">
+      <h2 class="an-section-title">How we built the ranking</h2>
+      <p class="an-section-sub">Every decision was made to keep the 32-player comparison consistent, transparent and reproducible.</p>
+    </div>
+    <div class="an-method">
+      <article class="an-step an-reveal">
+        <div class="an-step-num">STEP 01</div>
+        <h3>Defined the field</h3>
+        <p>The study includes all 32 first-round selections in the 2026 NFL Draft. Second-round players were excluded to preserve a complete, clearly defined group.</p>
+      </article>
+      <article class="an-step an-reveal">
+        <div class="an-step-num">STEP 02</div>
+        <h3>Verified each hometown</h3>
+        <p>We used the hometown listed by a player's final college athletics roster or official college announcement, not birthplace, college location or academy location.</p>
+      </article>
+      <article class="an-step an-reveal">
+        <div class="an-step-num">STEP 03</div>
+        <h3>Matched the income geography</h3>
+        <p>U.S. figures use 2024 ACS five-year Table B19013. County data is used when a hometown lacks a suitable place-level match. Ili'ili uses the 2020 Island Areas Census; Ottawa uses Statistics Canada's 2021 Census profile.</p>
+      </article>
+      <article class="an-step an-reveal">
+        <div class="an-step-num">STEP 04</div>
+        <h3>Calculated the multiple</h3>
+        <p>Projected signing bonus ÷ median annual household income. Ottawa's comparison converts the bonus to Canadian dollars using the Bank of Canada's July 24, 2026 USD/CAD rate of 1.4093.</p>
+      </article>
+    </div>
+    <div class="an-notes">
+      <div class="an-note an-reveal"><b>American Samoa</b>The Ili'ili comparison uses 2019 household income reported in the 2020 Island Areas Census because the standard ACS series does not cover American Samoa.</div>
+      <div class="an-note an-reveal"><b>Ottawa</b>Akheem Mesidor's row is calculated entirely in Canadian dollars after converting his estimated bonus at the stated exchange rate.</div>
+      <div class="an-note an-reveal"><b>Small-area geography</b>Highland Home is represented by Crenshaw County, Alabama, the cleanest available consistent income fallback.</div>
+      <div class="an-note an-reveal"><b>Hometown interpretation</b>Kenyon Sadiq and Max Iheanachor retain their official roster hometowns, with biographical ambiguity documented in the research workbook behind the study.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="an-section alt" id="sec-sources">
+  <div class="an-wrap">
+    <div class="an-section-head an-reveal">
+      <h2 class="an-section-title">Primary sources</h2>
+      <p class="an-section-sub">Every figure in this study traces back to one of five public sources.</p>
+    </div>
+    <div class="an-sources an-reveal">
+      <a class="an-source" href="https://overthecap.com/draft" target="_blank" rel="nofollow noopener">Over The Cap</a>
+      <a class="an-source" href="https://www.census.gov/programs-surveys/acs" target="_blank" rel="nofollow noopener">U.S. Census Bureau</a>
+      <a class="an-source" href="https://www.census.gov/programs-surveys/decennial-census/decade/2020/planning-management/release/2020-island-areas-data-products.html" target="_blank" rel="nofollow noopener">Island Areas Census</a>
+      <a class="an-source" href="https://www12.statcan.gc.ca/census-recensement/index-eng.cfm" target="_blank" rel="nofollow noopener">Statistics Canada</a>
+      <a class="an-source" href="https://www.bankofcanada.ca/rates/exchange/" target="_blank" rel="nofollow noopener">Bank of Canada</a>
+    </div>
+  </div>
+</section>
+
+<div class="an-sep on-alt"><button class="an-sep-btn" data-jump="menu"><span class="up">↑</span> Back to menu</button></div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="an-footer">
+  <div class="an-wrap">
+    <div class="an-logo-lockup" aria-label="Action Network">
+      <svg class="an-logo-svg" viewBox="0 0 228 34" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Action Network">
+        <circle class="an-logo-circle" cx="13" cy="17" r="11"></circle>
+        <path class="an-logo-check" d="M8 17.3 l3.4 3.4 l6.8 -7.4"></path>
+        <text class="an-logo-word" x="30" y="22.4">ACTION NETWORK</text>
+      </svg>
+    </div>
+    <p><strong>Sports intelligence for fans who want to know more.</strong><br>© 2026 Action Network. Signing bonus projections are rookie-scale estimates; household income figures are drawn from official statistical agencies.</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var DATA = [{"rank": 1, "pick": 5, "player": "Arvell Reese", "team": "New York Giants", "college": "Ohio State", "hometown": "Cleveland, Ohio", "bonus": 31795564, "income": 40801, "currency": "USD", "multiple": 779.3}, {"rank": 2, "pick": 3, "player": "Jeremiyah Love", "team": "Arizona Cardinals", "college": "Notre Dame", "hometown": "St. Louis, Missouri", "bonus": 35637768, "income": 56160, "currency": "USD", "multiple": 634.6}, {"rank": 3, "pick": 1, "player": "Fernando Mendoza", "team": "Las Vegas Raiders", "college": "Indiana", "hometown": "Miami, Florida", "bonus": 38781384, "income": 62462, "currency": "USD", "multiple": 620.9}, {"rank": 4, "pick": 10, "player": "Francis Mauigoa", "team": "New York Giants", "college": "Miami", "hometown": "Ili'ili, American Samoa", "bonus": 19308428, "income": 33750, "currency": "USD", "multiple": 572.1}, {"rank": 5, "pick": 4, "player": "Carnell Tate", "team": "Tennessee Titans", "college": "Ohio State", "hometown": "Chicago, Illinois", "bonus": 34240616, "income": 77902, "currency": "USD", "multiple": 439.5}, {"rank": 6, "pick": 13, "player": "Ty Simpson", "team": "Los Angeles Rams", "college": "Alabama", "hometown": "Martin, Tennessee", "bonus": 15204256, "income": 43381, "currency": "USD", "multiple": 350.5}, {"rank": 7, "pick": 26, "player": "Keylan Rutledge", "team": "Houston Texans", "college": "Georgia Tech", "hometown": "Royston, Georgia", "bonus": 10663464, "income": 34435, "currency": "USD", "multiple": 309.7}, {"rank": 8, "pick": 18, "player": "Caleb Banks", "team": "Minnesota Vikings", "college": "Florida", "hometown": "Detroit, Michigan", "bonus": 12147968, "income": 39938, "currency": "USD", "multiple": 304.2}, {"rank": 9, "pick": 6, "player": "Mansoor Delane", "team": "Kansas City Chiefs", "college": "LSU", "hometown": "Silver Spring, Maryland", "bonus": 27429444, "income": 99860, "currency": "USD", "multiple": 274.7}, {"rank": 10, "pick": 2, "player": "David Bailey", "team": "New York Jets", "college": "Texas Tech", "hometown": "Irvine, California", "bonus": 36860288, "income": 136719, "currency": "USD", "multiple": 269.6}, {"rank": 11, "pick": 12, "player": "Kadyn Proctor", "team": "Miami Dolphins", "college": "Alabama", "hometown": "Des Moines, Iowa", "bonus": 15728176, "income": 65932, "currency": "USD", "multiple": 238.6}, {"rank": 12, "pick": 15, "player": "Rueben Bain Jr.", "team": "Tampa Bay Buccaneers", "college": "Miami", "hometown": "Miami, Florida", "bonus": 13981744, "income": 62462, "currency": "USD", "multiple": 223.8}, {"rank": 13, "pick": 7, "player": "Sonny Styles", "team": "Washington Commanders", "college": "Ohio State", "hometown": "Pickerington, Ohio", "bonus": 23936532, "income": 111833, "currency": "USD", "multiple": 214.0}, {"rank": 14, "pick": 9, "player": "Spencer Fano", "team": "Cleveland Browns", "college": "Utah", "hometown": "Spanish Fork, Utah", "bonus": 20268980, "income": 104844, "currency": "USD", "multiple": 193.3}, {"rank": 15, "pick": 31, "player": "Keldric Faulk", "team": "Tennessee Titans", "college": "Auburn", "hometown": "Highland Home, Alabama", "bonus": 9018872, "income": 48560, "currency": "USD", "multiple": 185.7}, {"rank": 16, "pick": 11, "player": "Caleb Downs", "team": "Dallas Cowboys", "college": "Ohio State", "hometown": "Hoschton, Georgia", "bonus": 17823944, "income": 97083, "currency": "USD", "multiple": 183.6}, {"rank": 17, "pick": 16, "player": "Kenyon Sadiq", "team": "New York Jets", "college": "Oregon", "hometown": "Idaho Falls, Idaho", "bonus": 12933860, "income": 73110, "currency": "USD", "multiple": 176.9}, {"rank": 18, "pick": 23, "player": "Malachi Lawrence", "team": "Dallas Cowboys", "college": "UCF", "hometown": "Louisville, Kentucky", "bonus": 11362056, "income": 66849, "currency": "USD", "multiple": 170.0}, {"rank": 19, "pick": 22, "player": "Akheem Mesidor", "team": "Los Angeles Chargers", "college": "Miami", "hometown": "Ottawa, Ontario", "bonus": 11536696, "income": 102000, "currency": "CAD", "multiple": 159.4}, {"rank": 20, "pick": 8, "player": "Jordyn Tyson", "team": "New Orleans Saints", "college": "Arizona State", "hometown": "Allen, Texas", "bonus": 20443624, "income": 130901, "currency": "USD", "multiple": 156.2}, {"rank": 21, "pick": 21, "player": "Max Iheanachor", "team": "Pittsburgh Steelers", "college": "Arizona State", "hometown": "Los Angeles, California", "bonus": 11711344, "income": 81939, "currency": "USD", "multiple": 142.9}, {"rank": 22, "pick": 30, "player": "Omar Cooper Jr.", "team": "New York Jets", "college": "Indiana", "hometown": "Indianapolis, Indiana", "bonus": 9329700, "income": 66219, "currency": "USD", "multiple": 140.9}, {"rank": 23, "pick": 24, "player": "KC Concepcion", "team": "Cleveland Browns", "college": "Texas A&M", "hometown": "Charlotte, North Carolina", "bonus": 11012760, "income": 82068, "currency": "USD", "multiple": 134.2}, {"rank": 24, "pick": 32, "player": "Jadarian Price", "team": "Seattle Seahawks", "college": "Notre Dame", "hometown": "Denison, Texas", "bonus": 8818724, "income": 67365, "currency": "USD", "multiple": 130.9}, {"rank": 25, "pick": 19, "player": "Monroe Freeling", "team": "Carolina Panthers", "college": "Georgia", "hometown": "Charleston, South Carolina", "bonus": 11885992, "income": 92414, "currency": "USD", "multiple": 128.6}, {"rank": 26, "pick": 14, "player": "Olaivavega Ioane", "team": "Baltimore Ravens", "college": "Penn State", "hometown": "Graham, Washington", "bonus": 14331036, "income": 116862, "currency": "USD", "multiple": 122.6}, {"rank": 27, "pick": 17, "player": "Blake Miller", "team": "Detroit Lions", "college": "Clemson", "hometown": "Strongsville, Ohio", "bonus": 12584576, "income": 103253, "currency": "USD", "multiple": 121.9}, {"rank": 28, "pick": 20, "player": "Makai Lemon", "team": "Philadelphia Eagles", "college": "USC", "hometown": "Los Alamitos, California", "bonus": 11798672, "income": 97155, "currency": "USD", "multiple": 121.4}, {"rank": 29, "pick": 29, "player": "Peter Woods", "team": "Kansas City Chiefs", "college": "Clemson", "hometown": "Alabaster, Alabama", "bonus": 9700780, "income": 91357, "currency": "USD", "multiple": 106.2}, {"rank": 30, "pick": 25, "player": "Dillon Thieneman", "team": "Chicago Bears", "college": "Oregon", "hometown": "Westfield, Indiana", "bonus": 10838128, "income": 122789, "currency": "USD", "multiple": 88.3}, {"rank": 31, "pick": 28, "player": "Caleb Lomu", "team": "New England Patriots", "college": "Utah", "hometown": "Gilbert, Arizona", "bonus": 10401504, "income": 122551, "currency": "USD", "multiple": 84.9}, {"rank": 32, "pick": 27, "player": "Chris Johnson", "team": "Miami Dolphins", "college": "San Diego State", "hometown": "Eastvale, California", "bonus": 10488832, "income": 160069, "currency": "USD", "multiple": 65.5}];
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var MAX_MULT = 779.3;
+
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');}
+  function money(n){return '$'+(n/1e6).toFixed(1)+'M';}
+  function incomeStr(r){return (r.currency==='CAD'?'C$':'$')+r.income.toLocaleString('en-US');}
+
+  /* ---------- ranking table ---------- */
+  var tbody = document.querySelector('#rankTable tbody');
+  var searchInput = document.getElementById('rankSearch');
+  var showBtn = document.getElementById('showBtn');
+  var chipTop = document.getElementById('chipTop');
+  var chipAll = document.getElementById('chipAll');
+  var tableScroll = document.querySelector('.an-table-scroll');
+  var showAll = false;
+  var sortKey = 'rank', sortDir = 1;
+
+  function rowHtml(r){
+    var w = Math.max(3, r.multiple / MAX_MULT * 100);
+    return '<tr class="'+(r.rank<=3?'podium':'')+'">'+
+      '<td class="an-td-rank">'+r.rank+'</td>'+
+      '<td class="an-td-player"><strong>'+esc(r.player)+'</strong><small>'+esc(r.college)+'</small></td>'+
+      '<td class="an-td-team"><span class="an-pick-chip">No. '+r.pick+'</span><small>'+esc(r.team)+'</small></td>'+
+      '<td>'+esc(r.hometown)+'</td>'+
+      '<td class="an-td-money">'+money(r.bonus)+'</td>'+
+      '<td class="an-td-income">'+incomeStr(r)+(r.currency==='CAD'?'<small>CAD</small>':'')+'</td>'+
+      '<td><div class="an-mult"><div class="an-mult-track"><div class="an-mult-fill" data-w="'+w.toFixed(1)+'"></div></div><span class="an-mult-val">'+r.multiple.toFixed(1)+'&times;</span></div></td>'+
+    '</tr>';
+  }
+
+  function animateFills(scope){
+    var fills = scope.querySelectorAll('.an-mult-fill, .an-bar-fill, .an-cmp-fill');
+    fills.forEach(function(f){
+      var w = f.getAttribute('data-w') + '%';
+      if (reduced){ f.style.width = w; return; }
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ f.style.width = w; }); });
+    });
+  }
+
+  function render(){
+    var needle = searchInput.value.trim().toLowerCase();
+    var rows = DATA.filter(function(r){
+      if(!needle) return true;
+      return [r.player,r.team,r.college,r.hometown,'no. '+r.pick,String(r.pick)].join(' ').toLowerCase().indexOf(needle) !== -1;
+    });
+    rows = rows.slice().sort(function(a,b){
+      var x=a[sortKey], y=b[sortKey];
+      if(typeof x==='string'){ return x.localeCompare(y)*sortDir; }
+      return (x-y)*sortDir;
+    });
+    var visible = (showAll || needle) ? rows : rows.slice(0,10);
+    tbody.innerHTML = visible.map(rowHtml).join('');
+    var empty = tableScroll.parentNode.querySelector('.an-empty');
+    if(!visible.length){
+      if(!empty){ empty = document.createElement('div'); empty.className='an-empty'; tableScroll.after(empty); }
+      empty.textContent = 'No players match "'+searchInput.value+'"';
+    } else if (empty){ empty.remove(); }
+    showBtn.style.display = needle ? 'none' : 'inline-flex';
+    showBtn.innerHTML = (showAll ? 'Show top 10 <span class="ar">\u2191</span>' : 'Show all 32 rookies <span class="ar">\u2193</span>');
+    animateFills(tbody);
+    postHeight();
+  }
+
+  searchInput.addEventListener('input', render);
+  function setShowAll(v){
+    showAll = v;
+    chipTop.classList.toggle('active', !v);
+    chipAll.classList.toggle('active', v);
+    render();
+  }
+  showBtn.addEventListener('click', function(){ setShowAll(!showAll); });
+  chipTop.addEventListener('click', function(){ setShowAll(false); });
+  chipAll.addEventListener('click', function(){ setShowAll(true); });
+
+  document.querySelectorAll('#rankTable thead th').forEach(function(th){
+    th.addEventListener('click', function(){
+      var key = th.getAttribute('data-key');
+      if (sortKey === key){ sortDir = -sortDir; } else { sortKey = key; sortDir = 1; }
+      document.querySelectorAll('#rankTable thead th').forEach(function(t){ t.classList.remove('sorted'); });
+      th.classList.add('sorted');
+      th.querySelector('.arrow').textContent = sortDir === 1 ? '\u25B2' : '\u25BC';
+      render();
+    });
+  });
+
+  /* ---------- top 10 bar chart ---------- */
+  var barsHost = document.getElementById('topBars');
+  barsHost.innerHTML = DATA.slice(0,10).map(function(r){
+    var w = (r.multiple / MAX_MULT * 100).toFixed(1);
+    return '<div class="an-bar-row">'+
+      '<div class="an-bar-rank">'+r.rank+'</div>'+
+      '<div class="an-bar-name">'+esc(r.player)+'<small>'+esc(r.hometown)+'</small></div>'+
+      '<div class="an-bar-track"><div class="an-bar-fill" data-w="'+w+'"></div></div>'+
+      '<div class="an-bar-val">'+r.multiple.toFixed(1)+'&times;</div>'+
+    '</div>';
+  }).join('');
+
+  /* ---------- count-up ---------- */
+  function countUp(el){
+    var target = parseFloat(el.getAttribute('data-target'));
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+    if (reduced){ el.textContent = target.toFixed(dec); return; }
+    var dur = 1500, t0 = performance.now();
+    function tick(t){
+      var p = Math.min(1, (t - t0) / dur);
+      var v = target * (1 - Math.pow(1 - p, 3));
+      el.textContent = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll('.an-reveal');
+  if ('IntersectionObserver' in window && !reduced){
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('is-visible');
+          animateFills(e.target);
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ ro.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+    animateFills(document);
+  }
+
+  var heroDone = false;
+  function heroAnimate(){
+    if (heroDone) return; heroDone = true;
+    document.querySelectorAll('.cu').forEach(countUp);
+    animateFills(document.querySelector('.an-score'));
+  }
+  if ('IntersectionObserver' in window && !reduced){
+    var ho = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ setTimeout(heroAnimate, 250); ho.disconnect(); } });
+    }, { threshold: 0.3 });
+    ho.observe(document.querySelector('.an-band-dark'));
+  } else { heroAnimate(); }
+
+  /* ---------- jump nav ---------- */
+  function jumpTo(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    var nav = document.querySelector('.an-jump-nav');
+    var y = el.getBoundingClientRect().top + window.pageYOffset - (nav ? nav.offsetHeight : 0) - 6;
+    window.scrollTo({ top: Math.max(0, y), behavior: reduced ? 'auto' : 'smooth' });
+  }
+  document.querySelectorAll('[data-jump]').forEach(function(btn){
+    btn.addEventListener('click', function(){ jumpTo(btn.getAttribute('data-jump')); });
+  });
+  var sectionIds = ['sec-findings','sec-ranking','sec-chart','sec-method','sec-sources'];
+  if ('IntersectionObserver' in window){
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          document.querySelectorAll('.an-jump-link').forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('data-jump') === e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -55% 0px' });
+    sectionIds.forEach(function(id){ var el = document.getElementById(id); if (el) so.observe(el); });
+  }
+
+  /* ---------- iframe auto-height ---------- */
+  function postHeight(){
+    try {
+      var h = document.documentElement.scrollHeight;
+      window.parent.postMessage({ anEmbed: 'rookie-bonus-hometown', height: h }, '*');
+    } catch (e) {}
+  }
+  if ('ResizeObserver' in window){
+    new ResizeObserver(postHeight).observe(document.body);
+  }
+  window.addEventListener('load', postHeight);
+
+  render();
+})();
+</script>
+</body>
+</html>
