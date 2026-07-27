@@ -150,6 +150,25 @@ h1,h2,h3,h4,.an-display{font-family:var(--an-display);}
 .an-chip.active{background:var(--an-navy);border-color:var(--an-navy);color:#fff;}
 .an-table-scroll{overflow-x:auto;border:1px solid var(--an-border);box-shadow:var(--an-shadow);scrollbar-width:thin;scrollbar-color:var(--an-green-dark) #e9f4f1;}
 .an-table-scroll::-webkit-scrollbar{height:9px;width:9px;}
+.an-table-shell{position:relative;}
+.an-table-topbar{display:none;align-items:center;justify-content:space-between;gap:12px;margin:0 0 8px;}
+.an-table-shell.is-scrollable .an-table-topbar{display:flex;}
+.an-scroll-btns{display:flex;gap:6px;}
+.an-scroll-btn{appearance:none;cursor:pointer;width:36px;height:32px;display:inline-flex;align-items:center;justify-content:center;background:#fff;border:2px solid var(--an-green);color:var(--an-green-dark);font-family:var(--an-display);font-weight:900;font-size:20px;line-height:1;padding:0 0 3px;transition:all .15s ease;}
+.an-scroll-btn:hover:not(:disabled){background:var(--an-green);color:#fff;}
+.an-scroll-btn:disabled{opacity:.35;cursor:default;border-color:var(--an-border-2);color:var(--an-muted);}
+.an-scroll-hint{display:inline-flex;margin:0;align-items:center;gap:8px;font-family:var(--an-display);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--an-green-dark);}
+.an-scroll-hint::before{content:"";flex:0 0 auto;width:7px;height:7px;background:var(--an-green);transform:rotate(45deg);}
+.an-scroll-hint .ar{letter-spacing:0;font-size:13px;animation:anNudge 1.4s ease-in-out infinite;}
+@keyframes anNudge{0%,100%{transform:translateX(0);}50%{transform:translateX(4px);}}
+.an-table-shell.seen .an-scroll-hint .ar{animation:none;}
+.an-table-clip{position:relative;}
+.an-table-clip::after{content:"";position:absolute;top:1px;right:1px;bottom:11px;width:46px;pointer-events:none;opacity:0;transition:opacity .25s ease;background:linear-gradient(90deg,rgba(255,255,255,0),#fff 85%);}
+.an-table-shell.is-scrollable .an-table-clip::after{opacity:1;}
+.an-table-shell.is-scrollable.at-end .an-table-clip::after{opacity:0;}
+.an-table-scroll:focus-visible{outline:3px solid var(--an-green);outline-offset:-3px;}
+@media(max-width:480px){.an-scroll-hint{font-size:9.5px;letter-spacing:.1em;}}
+@media (prefers-reduced-motion: reduce){.an-scroll-hint .ar{animation:none;}}
 .an-table-scroll::-webkit-scrollbar-track{background:#e9f4f1;}
 .an-table-scroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--an-green-dark),#00543a);border:1px solid #e9f4f1;border-radius:999px;}
 table.an-table{width:100%;border-collapse:collapse;min-width:1000px;font-size:14.5px;background:#fff;}
@@ -381,7 +400,16 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
       <button class="an-chip active" id="chipTop">Top 10</button>
       <button class="an-chip" id="chipAll">All 32</button>
     </div>
-    <div class="an-table-scroll an-reveal">
+    <div class="an-table-shell an-reveal">
+      <div class="an-table-topbar">
+        <p class="an-scroll-hint" id="scrollHint">Swipe or use the arrows to see all columns <span class="ar">→</span></p>
+        <div class="an-scroll-btns">
+          <button type="button" class="an-scroll-btn" id="tblLeft" data-dir="-1" aria-label="Scroll the table left" disabled>‹</button>
+          <button type="button" class="an-scroll-btn" id="tblRight" data-dir="1" aria-label="Scroll the table right">›</button>
+        </div>
+      </div>
+      <div class="an-table-clip">
+      <div class="an-table-scroll" tabindex="0" aria-label="Complete first-round ranking table. Scrolls horizontally on narrow screens.">
       <table class="an-table" id="rankTable">
         <thead><tr>
           <th data-key="rank" class="sorted">Rank<span class="arrow">▲</span></th>
@@ -396,6 +424,8 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
         </tr></thead>
         <tbody></tbody>
       </table>
+      </div>
+      </div>
     </div>
     <div class="an-table-foot">
       <p class="an-fineprint">Households covered is the number of hometown households whose full year of median income the bonus equals; working lifetimes assume a 40-year career at that income; homes back home divides the bonus by the median value of owner-occupied homes in the same geography. Signing bonuses are rookie-scale estimates, not confirmed cash received, and Ottawa's row is shown in Canadian dollars.</p>
@@ -568,8 +598,44 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
     showBtn.style.display = needle ? 'none' : 'inline-flex';
     showBtn.innerHTML = (showAll ? 'Show top 10 <span class="ar">\u2191</span>' : 'Show all 32 rookies <span class="ar">\u2193</span>');
     animateFills(tbody);
+    checkTableOverflow();
     postHeight();
   }
+
+  /* horizontal-scroll affordance: hint + edge fade only when the table actually overflows */
+  var tableShell = document.querySelector('.an-table-shell');
+  var tableScrollEl = document.querySelector('.an-table-scroll');
+  function checkTableOverflow(){
+    if (!tableShell || !tableScrollEl) return;
+    var sc = tableScrollEl.scrollWidth > tableScrollEl.clientWidth + 4;
+    tableShell.classList.toggle('is-scrollable', sc);
+    if (sc) updateTableEdge();
+  }
+  var tblBtnL = document.getElementById('tblLeft');
+  var tblBtnR = document.getElementById('tblRight');
+  function updateTableEdge(){
+    var max = tableScrollEl.scrollWidth - tableScrollEl.clientWidth;
+    var atEnd = tableScrollEl.scrollLeft >= max - 4;
+    tableShell.classList.toggle('at-end', atEnd);
+    if (tblBtnL) tblBtnL.disabled = tableScrollEl.scrollLeft <= 4;
+    if (tblBtnR) tblBtnR.disabled = atEnd;
+  }
+  [tblBtnL, tblBtnR].forEach(function(btn){
+    if (!btn) return;
+    btn.addEventListener('click', function(){
+      tableShell.classList.add('seen');
+      var step = Math.max(220, Math.round(tableScrollEl.clientWidth * 0.6)) * (+btn.dataset.dir);
+      tableScrollEl.scrollBy({ left: step, behavior: reduced ? 'auto' : 'smooth' });
+    });
+  });
+  if (tableScrollEl){
+    tableScrollEl.addEventListener('scroll', function(){
+      tableShell.classList.add('seen');
+      updateTableEdge();
+    }, { passive: true });
+  }
+  window.addEventListener('resize', checkTableOverflow);
+  window.addEventListener('load', checkTableOverflow);
 
   searchInput.addEventListener('input', render);
   function setShowAll(v){
