@@ -175,6 +175,10 @@ table.an-table{width:100%;border-collapse:collapse;min-width:1000px;font-size:14
 .an-table thead th{position:sticky;top:0;background:var(--an-navy);color:#fff;font-family:var(--an-display);font-weight:700;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:13px 12px;white-space:nowrap;cursor:pointer;user-select:none;z-index:2;}
 .an-table thead th:hover{background:var(--an-navy-2);}
 .an-table thead th .arrow{display:inline-block;margin-left:5px;color:var(--an-green-bright);font-size:11px;opacity:0;transition:opacity .15s;}
+.an-thi{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;margin-left:7px;border:1.5px solid rgba(255,255,255,.55);border-radius:50%;font-family:var(--an-serif);font-style:italic;font-weight:700;font-size:10px;line-height:1;letter-spacing:0;text-transform:none;color:rgba(255,255,255,.8);cursor:help;vertical-align:1px;transition:border-color .15s,color .15s;}
+.an-thi:hover,.an-thi:focus-visible{border-color:var(--an-green-bright);color:var(--an-green-bright);}
+.an-tip{position:fixed;z-index:120;max-width:270px;background:var(--an-navy);color:#fff;border:1px solid rgba(255,255,255,.18);border-left:4px solid var(--an-green-bright);box-shadow:var(--an-shadow-strong);padding:10px 13px;font-family:var(--an-serif);font-size:13px;font-weight:400;line-height:1.55;letter-spacing:0;text-transform:none;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;}
+.an-tip.show{opacity:1;transform:none;}
 .an-table thead th.sorted .arrow{opacity:1;}
 .an-table tbody td{padding:12px 12px;border-bottom:1px solid var(--an-border);vertical-align:middle;}
 .an-table tbody tr{transition:background .15s;}
@@ -412,15 +416,15 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
       <div class="an-table-scroll" tabindex="0" aria-label="Complete first-round ranking table. Scrolls horizontally on narrow screens.">
       <table class="an-table" id="rankTable">
         <thead><tr>
-          <th data-key="rank" class="sorted">Rank<span class="arrow">▲</span></th>
+          <th data-key="rank" class="sorted">Rank<span class="an-thi" tabindex="0" role="button" aria-label="About this column: Ranked by households covered, from highest to lowest." data-tip="Ranked by households covered, from highest to lowest.">i</span><span class="arrow">▲</span></th>
           <th data-key="player">Player<span class="arrow">▲</span></th>
           <th data-key="pick">Pick / Team<span class="arrow">▲</span></th>
-          <th data-key="hometown">Verified hometown<span class="arrow">▲</span></th>
-          <th data-key="bonus">Projected bonus<span class="arrow">▲</span></th>
-          <th data-key="income">Median income<span class="arrow">▲</span></th>
-          <th data-key="multiple">Households Covered<span class="arrow">▲</span></th>
-          <th data-key="multiple" class="th-lt">Working Lifetimes<span class="arrow">▲</span></th>
-          <th data-key="homes">Homes Back Home<span class="arrow">▲</span></th>
+          <th data-key="hometown">Verified hometown<span class="an-thi" tabindex="0" role="button" aria-label="About this column: The hometown listed on the player's final college roster or official college announcement, not his birthplace." data-tip="The hometown listed on the player's final college roster or official college announcement, not his birthplace.">i</span><span class="arrow">▲</span></th>
+          <th data-key="bonus">Projected bonus<span class="an-thi" tabindex="0" role="button" aria-label="About this column: Rookie-scale signing bonus estimate from Over The Cap. A projection, not confirmed cash received." data-tip="Rookie-scale signing bonus estimate from Over The Cap. A projection, not confirmed cash received.">i</span><span class="arrow">▲</span></th>
+          <th data-key="income">Median income<span class="an-thi" tabindex="0" role="button" aria-label="About this column: Median household income in the hometown, 2024 ACS five-year estimates. Ottawa uses Statistics Canada, in Canadian dollars." data-tip="Median household income in the hometown, 2024 ACS five-year estimates. Ottawa uses Statistics Canada, in Canadian dollars.">i</span><span class="arrow">▲</span></th>
+          <th data-key="multiple">Households Covered<span class="an-thi" tabindex="0" role="button" aria-label="About this column: How many hometown households' full year of median income the bonus equals: bonus divided by median household income." data-tip="How many hometown households' full year of median income the bonus equals: bonus divided by median household income.">i</span><span class="arrow">▲</span></th>
+          <th data-key="multiple" class="th-lt">Working Lifetimes<span class="an-thi" tabindex="0" role="button" aria-label="About this column: The same comparison expressed as full 40-year careers at the hometown's median income." data-tip="The same comparison expressed as full 40-year careers at the hometown's median income.">i</span><span class="arrow">▲</span></th>
+          <th data-key="homes">Homes Back Home<span class="an-thi" tabindex="0" role="button" aria-label="About this column: How many homes the bonus could buy at the hometown's median owner-occupied home value (Census Table B25077). Ottawa uses the CREA benchmark price." data-tip="How many homes the bonus could buy at the hometown's median owner-occupied home value (Census Table B25077). Ottawa uses the CREA benchmark price.">i</span><span class="arrow">▲</span></th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -647,6 +651,45 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
   showBtn.addEventListener('click', function(){ setShowAll(!showAll); });
   chipTop.addEventListener('click', function(){ setShowAll(false); });
   chipAll.addEventListener('click', function(){ setShowAll(true); });
+
+  /* ---------- column info tooltips ---------- */
+  var tipEl = document.createElement('div');
+  tipEl.className = 'an-tip';
+  tipEl.setAttribute('role','tooltip');
+  document.body.appendChild(tipEl);
+  var tipFor = null;
+  function showTip(el){
+    tipEl.textContent = el.getAttribute('data-tip');
+    tipEl.classList.add('show');
+    tipFor = el;
+    var r = el.getBoundingClientRect();
+    tipEl.style.left = '0px'; tipEl.style.top = '0px';
+    var tw = tipEl.offsetWidth, thg = tipEl.offsetHeight;
+    var vw = document.documentElement.clientWidth, vh = document.documentElement.clientHeight;
+    var x = Math.max(8, Math.min(r.left + r.width/2 - tw/2, vw - tw - 8));
+    var y = r.top - thg - 8;
+    if (y < 8) y = Math.min(r.bottom + 7, vh - thg - 8);
+    tipEl.style.left = x + 'px';
+    tipEl.style.top = Math.max(8, y) + 'px';
+  }
+  function hideTip(){ tipEl.classList.remove('show'); tipFor = null; }
+  document.querySelectorAll('.an-thi').forEach(function(el){
+    el.addEventListener('mouseenter', function(){ showTip(el); });
+    el.addEventListener('mouseleave', hideTip);
+    el.addEventListener('focus', function(){ showTip(el); });
+    el.addEventListener('blur', hideTip);
+    el.addEventListener('click', function(e){
+      e.stopPropagation();                       /* an info tap must never re-sort the column */
+      if (tipFor === el) hideTip(); else showTip(el);
+    });
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); e.stopPropagation(); if (tipFor === el) hideTip(); else showTip(el); }
+    });
+  });
+  document.addEventListener('click', function(e){ if (!e.target.closest('.an-thi')) hideTip(); });
+  function repositionTip(){ if (tipFor) showTip(tipFor); }   /* follow the icon instead of vanishing on scroll */
+  window.addEventListener('scroll', repositionTip, { passive: true });
+  if (tableScrollEl) tableScrollEl.addEventListener('scroll', repositionTip, { passive: true });
 
   document.querySelectorAll('#rankTable thead th').forEach(function(th){
     th.addEventListener('click', function(){
