@@ -152,7 +152,7 @@ h1,h2,h3,h4,.an-display{font-family:var(--an-display);}
 .an-table-scroll::-webkit-scrollbar{height:9px;width:9px;}
 .an-table-scroll::-webkit-scrollbar-track{background:#e9f4f1;}
 .an-table-scroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--an-green-dark),#00543a);border:1px solid #e9f4f1;border-radius:999px;}
-table.an-table{width:100%;border-collapse:collapse;min-width:880px;font-size:14.5px;background:#fff;}
+table.an-table{width:100%;border-collapse:collapse;min-width:1000px;font-size:14.5px;background:#fff;}
 .an-table thead th{position:sticky;top:0;background:var(--an-navy);color:#fff;font-family:var(--an-display);font-weight:700;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:13px 12px;white-space:nowrap;cursor:pointer;user-select:none;z-index:2;}
 .an-table thead th:hover{background:var(--an-navy-2);}
 .an-table thead th .arrow{display:inline-block;margin-left:5px;color:var(--an-green-bright);font-size:11px;opacity:0;transition:opacity .15s;}
@@ -171,11 +171,16 @@ tr.podium .an-td-rank{color:var(--an-green-dark);}
 .an-td-money{font-family:var(--an-display);font-weight:800;font-size:16.5px;letter-spacing:.02em;color:var(--an-navy);white-space:nowrap;}
 .an-td-income{white-space:nowrap;}
 .an-td-income small{display:block;font-size:11px;letter-spacing:.08em;color:var(--an-muted);}
-.an-mult{display:grid;grid-template-columns:1fr 62px;align-items:center;gap:10px;min-width:190px;}
+.an-mult{display:grid;grid-template-columns:1fr 72px;align-items:center;gap:10px;min-width:190px;}
 .an-mult-track{position:relative;height:12px;background:#e7efeb;}
 .an-mult-fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,var(--an-green-dark),var(--an-green));transition:width 1s cubic-bezier(.2,.7,.2,1);}
 tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--an-green-bright));}
 .an-mult-val{font-family:var(--an-display);font-weight:800;font-size:16px;color:var(--an-green-dark);text-align:right;white-space:nowrap;}
+.an-mult-val small{display:block;font-family:var(--an-display);font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--an-muted);margin-top:1px;}
+.an-td-life{white-space:nowrap;}
+.an-td-life b{display:block;font-family:var(--an-display);font-weight:900;font-size:17px;color:var(--an-navy);line-height:1;}
+.an-td-hh b{color:var(--an-green-dark);font-size:18px;}
+.an-td-life small{display:block;font-family:var(--an-display);font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--an-muted);margin-top:3px;}
 .an-table-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;}
 .an-btn{appearance:none;cursor:pointer;border:2px solid var(--an-green);background:#fff;color:var(--an-green-dark);font-family:var(--an-display);font-weight:800;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase;padding:11px 24px;display:inline-flex;align-items:center;gap:9px;transition:all .18s ease;}
 .an-btn:hover{background:var(--an-green);color:#fff;}
@@ -261,7 +266,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
     <div class="an-hero-grid">
       <div class="an-hero-copy">
         <h1>What Every First-Round Rookie's Signing Bonus Is Worth <span class="u">Back Home</span></h1>
-        <p class="an-dek">We compared every 2026 first-round pick's projected signing bonus with the typical household income in his verified hometown. The result is a new way to see just how far a rookie's first NFL payday stretches.</p>
+        <p class="an-dek">Draft night hands out life-changing money. We took every 2026 first-rounder's projected signing bonus back to his hometown and measured it against what the families around him actually earn. The same check means something very different depending on the block that raised you.</p>
         <p class="an-byline"><b>Action Network Research</b><i>·</i>Updated July 26, 2026<i>·</i>9 min read</p>
         <div class="an-hero-stats" aria-label="Study summary">
           <div class="an-hero-stat"><b><span class="cu" data-target="32">0</span></b><span class="lbl">First-round rookies analyzed</span></div>
@@ -285,7 +290,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
             <div class="an-cmp-track"><div class="an-cmp-fill thin" data-w="4"></div><span class="an-cmp-val">$40,801</span></div>
           </div>
         </div>
-        <p class="an-score-note">His projected bonus equals a year of income for roughly 779 Cleveland households.</p>
+        <p class="an-score-note">His projected bonus equals a year of income for roughly 779 Cleveland households: nearly 20 full working lifetimes, or about 312 homes at the city's median value.</p>
       </aside>
     </div>
   </div>
@@ -307,8 +312,8 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
 <section class="an-section" id="sec-intro">
   <div class="an-wrap">
     <div class="an-prose an-reveal">
-      <p>The first name called on draft night does not necessarily produce the biggest hometown payday. Cleveland native <strong>Arvell Reese</strong>, selected fifth, tops this ranking because his projected $31.8 million bonus equals a year of median household income for roughly <span class="num">779 Cleveland households</span>.</p>
-      <p>That puts him more than 158 households ahead of No. 1 pick Fernando Mendoza. The comparison shows how draft slot and local economics combine: two rookies can receive similarly extraordinary contracts, but those paydays carry very different weight in the places that shaped them.</p>
+      <p>The first name called on draft night does not necessarily produce the biggest hometown payday. <strong>Arvell Reese</strong> grew up in Cleveland, where the median household brings home $40,801 a year. His projected $31.8 million bonus equals a year of income for roughly <span class="num">779 of those households</span>, or nearly 20 full working lifetimes for the family next door. At Cleveland's $102,000 median home value, that one check is roughly 312 houses on streets like the ones he grew up on.</p>
+      <p>That puts him more than 158 households ahead of No. 1 pick Fernando Mendoza. Two rookies can sign similarly extraordinary contracts, but the checks carry very different weight in the places that shaped them: money that reads as generational in Cleveland makes a quieter splash in Irvine, where the median household earns $136,719.</p>
     </div>
   </div>
 </section>
@@ -318,41 +323,41 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
   <div class="an-wrap">
     <div class="an-section-head an-reveal">
       <h2 class="an-section-title">The Headline Numbers</h2>
-      <p class="an-section-sub">Four findings that reshape the draft order.</p>
+      <p class="an-section-sub">Four stories the paychecks tell once they get home.</p>
     </div>
     <div class="an-kf-grid">
       <article class="an-kf-card is-featured an-reveal">
         <div class="an-kf-num">01</div>
         <div>
           <h3>Reese Turns Pick No. 5 Into the Top Hometown Payday</h3>
-          <p>His projected bonus equals a year of median income for <b>779.3 Cleveland households</b>, the largest multiple in the first round.</p>
+          <p>His projected bonus equals a year of median income for <b>779.3 Cleveland households</b>, nearly 20 working lifetimes, or roughly <b>312 homes</b> in the city that raised him.</p>
         </div>
       </article>
       <article class="an-kf-card an-reveal">
         <div class="an-kf-num">02</div>
         <div>
           <h3>Mauigoa's American Samoa Roots Push Him Into the Top Four</h3>
-          <p>The No. 10 pick's $19.3 million projection covers a year of income for <b>572.1 households</b> in Ili'ili.</p>
+          <p>The No. 10 pick's $19.3 million projection covers a year of income for <b>572.1 households</b> in Ili'ili, the village he still calls home.</p>
         </div>
       </article>
       <article class="an-kf-card an-reveal">
         <div class="an-kf-num">03</div>
         <div>
           <h3>Irvine's Higher Income Pulls the No. 2 Pick Down to 10th</h3>
-          <p>David Bailey owns the second-largest bonus estimate, but a <b>$136,719</b> median household income changes the local comparison.</p>
+          <p>David Bailey owns the second-largest bonus estimate, but back home the median household earns <b>$136,719</b> and the median house costs <b>$1,191,500</b>, so his $36.9 million buys about 31 of them where Reese's smaller check buys 312.</p>
         </div>
       </article>
       <article class="an-kf-card an-reveal">
         <div class="an-kf-num">04</div>
         <div>
           <h3>Pick No. 31 Lands in the Top Half</h3>
-          <p>Keldric Faulk ranks 15th: his $9.0 million projected bonus covers a year of median household income for <b>185.7 households</b> in Highland Home.</p>
+          <p>Keldric Faulk ranks 15th: in tiny Highland Home, his $9.0 million projected bonus covers a year of income for <b>185.7 households</b>, more than four working lifetimes.</p>
         </div>
       </article>
     </div>
     <div class="an-callout an-reveal">
       <h4>How to read this</h4>
-      <p><strong>779.3×</strong> means the projected signing bonus equals one year of median household income for roughly 779.3 households in the player's hometown.</p>
+      <p><strong>779.3×</strong> means the projected signing bonus equals one year of median household income for roughly 779.3 households in the player's hometown. Put another way, over a typical 40-year career, that is nearly 20 working lifetimes on one check, or about 312 homes at the local median value.</p>
       <p>The comparison is a snapshot, not a spending plan. Bonuses are gross contract figures and do not account for taxes, agent fees, payment timing or spending.</p>
     </div>
   </div>
@@ -365,7 +370,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
   <div class="an-wrap">
     <div class="an-section-head an-reveal">
       <h2 class="an-section-title">Complete First-Round Ranking</h2>
-      <p class="an-section-sub">Where rookie bonuses stretch furthest. Search by player, team, college, hometown or draft pick, and click any column header to sort.</p>
+      <p class="an-section-sub">Every first-rounder, ranked by how far his money goes in the place that raised him. Search by player, team, college, hometown or draft pick, and click any column header to sort.</p>
     </div>
     <div class="an-rank-tools an-reveal">
       <label class="an-search">
@@ -385,13 +390,15 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
           <th data-key="hometown">Verified hometown<span class="arrow">▲</span></th>
           <th data-key="bonus">Projected bonus<span class="arrow">▲</span></th>
           <th data-key="income">Median income<span class="arrow">▲</span></th>
-          <th data-key="multiple">Multiple<span class="arrow">▲</span></th>
+          <th data-key="multiple">Households Covered<span class="arrow">▲</span></th>
+          <th data-key="multiple" class="th-lt">Working Lifetimes<span class="arrow">▲</span></th>
+          <th data-key="homes">Homes Back Home<span class="arrow">▲</span></th>
         </tr></thead>
         <tbody></tbody>
       </table>
     </div>
     <div class="an-table-foot">
-      <p class="an-fineprint">Signing bonuses are rookie-scale estimates, not confirmed cash received. Income is the latest standardized hometown measure available under the methodology below. Ottawa's row is shown in Canadian dollars.</p>
+      <p class="an-fineprint">Households covered is the number of hometown households whose full year of median income the bonus equals; working lifetimes assume a 40-year career at that income; homes back home divides the bonus by the median value of owner-occupied homes in the same geography. Signing bonuses are rookie-scale estimates, not confirmed cash received, and Ottawa's row is shown in Canadian dollars.</p>
       <button class="an-btn" id="showBtn">Show all 32 rookies <span class="ar">↓</span></button>
     </div>
   </div>
@@ -404,7 +411,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
   <div class="an-wrap">
     <div class="an-section-head an-reveal">
       <h2 class="an-section-title">The Top 10, Drawn to Scale</h2>
-      <p class="an-section-sub">Each bar shows a rookie's bonus-to-income multiple relative to Arvell Reese's first-round high of 779.3×.</p>
+      <p class="an-section-sub">Each bar shows how a rookie's payday measures up back home, relative to Arvell Reese's first-round high of 779.3×. The small line under each name translates it into working lifetimes at the local median income.</p>
     </div>
     <div class="an-bars an-reveal" id="topBars"></div>
   </div>
@@ -433,7 +440,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
       <article class="an-step an-reveal">
         <div class="an-step-num">STEP 03</div>
         <h3>Matched the Income Geography</h3>
-        <p>U.S. figures use 2024 ACS five-year Table B19013. County data is used when a hometown lacks a suitable place-level match. Ili'ili uses the 2020 Island Areas Census; Ottawa uses Statistics Canada's 2021 Census profile.</p>
+        <p>Income uses 2024 ACS five-year Table B19013 and home values use Table B25077 from the same release, matched to identical geographies. County data is used when a hometown lacks a suitable place-level match. Ili'ili uses the 2020 Island Areas Census; Ottawa uses Statistics Canada's 2021 Census profile.</p>
       </article>
       <article class="an-step an-reveal">
         <div class="an-step-num">STEP 04</div>
@@ -442,8 +449,8 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
       </article>
     </div>
     <div class="an-notes">
-      <div class="an-note an-reveal"><b>American Samoa</b>The Ili'ili comparison uses 2019 household income reported in the 2020 Island Areas Census because the standard ACS series does not cover American Samoa.</div>
-      <div class="an-note an-reveal"><b>Ottawa</b>Akheem Mesidor's row is calculated entirely in Canadian dollars after converting his estimated bonus at the stated exchange rate.</div>
+      <div class="an-note an-reveal"><b>American Samoa</b>The Ili'ili comparison uses 2019 household income reported in the 2020 Island Areas Census because the standard ACS series does not cover American Samoa. No comparable home-value measure exists, so Francis Mauigoa's homes figure is not shown.</div>
+      <div class="an-note an-reveal"><b>Ottawa</b>Akheem Mesidor's row is calculated entirely in Canadian dollars after converting his estimated bonus at the stated exchange rate. His homes figure uses the CREA MLS Home Price Index composite benchmark for Ottawa, $632,200 in June 2026.</div>
       <div class="an-note an-reveal"><b>Small-area geography</b>Highland Home is represented by Crenshaw County, Alabama, the cleanest available consistent income fallback.</div>
       <div class="an-note an-reveal"><b>Hometown interpretation</b>Kenyon Sadiq and Max Iheanachor retain their official roster hometowns, with biographical ambiguity documented in the research workbook behind the study.</div>
     </div>
@@ -455,7 +462,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
   <div class="an-wrap">
     <div class="an-section-head an-reveal">
       <h2 class="an-section-title">Primary Sources</h2>
-      <p class="an-section-sub">Every figure in this study traces back to one of five public sources.</p>
+      <p class="an-section-sub">Every figure in this study traces back to one of six public sources.</p>
     </div>
     <div class="an-sources an-reveal">
       <a class="an-source" href="https://overthecap.com/draft" target="_blank" rel="nofollow noopener">Over The Cap</a>
@@ -463,6 +470,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
       <a class="an-source" href="https://www.census.gov/programs-surveys/decennial-census/decade/2020/planning-management/release/2020-island-areas-data-products.html" target="_blank" rel="nofollow noopener">Island Areas Census</a>
       <a class="an-source" href="https://www12.statcan.gc.ca/census-recensement/index-eng.cfm" target="_blank" rel="nofollow noopener">Statistics Canada</a>
       <a class="an-source" href="https://www.bankofcanada.ca/rates/exchange/" target="_blank" rel="nofollow noopener">Bank of Canada</a>
+      <a class="an-source" href="https://creastats.crea.ca/board/otta/" target="_blank" rel="nofollow noopener">CREA</a>
     </div>
   </div>
 </section>
@@ -488,7 +496,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
 <script>
 (function(){
   "use strict";
-  var DATA = [{"rank": 1, "pick": 5, "player": "Arvell Reese", "team": "New York Giants", "college": "Ohio State", "hometown": "Cleveland, Ohio", "bonus": 31795564, "income": 40801, "currency": "USD", "multiple": 779.3}, {"rank": 2, "pick": 3, "player": "Jeremiyah Love", "team": "Arizona Cardinals", "college": "Notre Dame", "hometown": "St. Louis, Missouri", "bonus": 35637768, "income": 56160, "currency": "USD", "multiple": 634.6}, {"rank": 3, "pick": 1, "player": "Fernando Mendoza", "team": "Las Vegas Raiders", "college": "Indiana", "hometown": "Miami, Florida", "bonus": 38781384, "income": 62462, "currency": "USD", "multiple": 620.9}, {"rank": 4, "pick": 10, "player": "Francis Mauigoa", "team": "New York Giants", "college": "Miami", "hometown": "Ili'ili, American Samoa", "bonus": 19308428, "income": 33750, "currency": "USD", "multiple": 572.1}, {"rank": 5, "pick": 4, "player": "Carnell Tate", "team": "Tennessee Titans", "college": "Ohio State", "hometown": "Chicago, Illinois", "bonus": 34240616, "income": 77902, "currency": "USD", "multiple": 439.5}, {"rank": 6, "pick": 13, "player": "Ty Simpson", "team": "Los Angeles Rams", "college": "Alabama", "hometown": "Martin, Tennessee", "bonus": 15204256, "income": 43381, "currency": "USD", "multiple": 350.5}, {"rank": 7, "pick": 26, "player": "Keylan Rutledge", "team": "Houston Texans", "college": "Georgia Tech", "hometown": "Royston, Georgia", "bonus": 10663464, "income": 34435, "currency": "USD", "multiple": 309.7}, {"rank": 8, "pick": 18, "player": "Caleb Banks", "team": "Minnesota Vikings", "college": "Florida", "hometown": "Detroit, Michigan", "bonus": 12147968, "income": 39938, "currency": "USD", "multiple": 304.2}, {"rank": 9, "pick": 6, "player": "Mansoor Delane", "team": "Kansas City Chiefs", "college": "LSU", "hometown": "Silver Spring, Maryland", "bonus": 27429444, "income": 99860, "currency": "USD", "multiple": 274.7}, {"rank": 10, "pick": 2, "player": "David Bailey", "team": "New York Jets", "college": "Texas Tech", "hometown": "Irvine, California", "bonus": 36860288, "income": 136719, "currency": "USD", "multiple": 269.6}, {"rank": 11, "pick": 12, "player": "Kadyn Proctor", "team": "Miami Dolphins", "college": "Alabama", "hometown": "Des Moines, Iowa", "bonus": 15728176, "income": 65932, "currency": "USD", "multiple": 238.6}, {"rank": 12, "pick": 15, "player": "Rueben Bain Jr.", "team": "Tampa Bay Buccaneers", "college": "Miami", "hometown": "Miami, Florida", "bonus": 13981744, "income": 62462, "currency": "USD", "multiple": 223.8}, {"rank": 13, "pick": 7, "player": "Sonny Styles", "team": "Washington Commanders", "college": "Ohio State", "hometown": "Pickerington, Ohio", "bonus": 23936532, "income": 111833, "currency": "USD", "multiple": 214.0}, {"rank": 14, "pick": 9, "player": "Spencer Fano", "team": "Cleveland Browns", "college": "Utah", "hometown": "Spanish Fork, Utah", "bonus": 20268980, "income": 104844, "currency": "USD", "multiple": 193.3}, {"rank": 15, "pick": 31, "player": "Keldric Faulk", "team": "Tennessee Titans", "college": "Auburn", "hometown": "Highland Home, Alabama", "bonus": 9018872, "income": 48560, "currency": "USD", "multiple": 185.7}, {"rank": 16, "pick": 11, "player": "Caleb Downs", "team": "Dallas Cowboys", "college": "Ohio State", "hometown": "Hoschton, Georgia", "bonus": 17823944, "income": 97083, "currency": "USD", "multiple": 183.6}, {"rank": 17, "pick": 16, "player": "Kenyon Sadiq", "team": "New York Jets", "college": "Oregon", "hometown": "Idaho Falls, Idaho", "bonus": 12933860, "income": 73110, "currency": "USD", "multiple": 176.9}, {"rank": 18, "pick": 23, "player": "Malachi Lawrence", "team": "Dallas Cowboys", "college": "UCF", "hometown": "Louisville, Kentucky", "bonus": 11362056, "income": 66849, "currency": "USD", "multiple": 170.0}, {"rank": 19, "pick": 22, "player": "Akheem Mesidor", "team": "Los Angeles Chargers", "college": "Miami", "hometown": "Ottawa, Ontario", "bonus": 11536696, "income": 102000, "currency": "CAD", "multiple": 159.4}, {"rank": 20, "pick": 8, "player": "Jordyn Tyson", "team": "New Orleans Saints", "college": "Arizona State", "hometown": "Allen, Texas", "bonus": 20443624, "income": 130901, "currency": "USD", "multiple": 156.2}, {"rank": 21, "pick": 21, "player": "Max Iheanachor", "team": "Pittsburgh Steelers", "college": "Arizona State", "hometown": "Los Angeles, California", "bonus": 11711344, "income": 81939, "currency": "USD", "multiple": 142.9}, {"rank": 22, "pick": 30, "player": "Omar Cooper Jr.", "team": "New York Jets", "college": "Indiana", "hometown": "Indianapolis, Indiana", "bonus": 9329700, "income": 66219, "currency": "USD", "multiple": 140.9}, {"rank": 23, "pick": 24, "player": "KC Concepcion", "team": "Cleveland Browns", "college": "Texas A&M", "hometown": "Charlotte, North Carolina", "bonus": 11012760, "income": 82068, "currency": "USD", "multiple": 134.2}, {"rank": 24, "pick": 32, "player": "Jadarian Price", "team": "Seattle Seahawks", "college": "Notre Dame", "hometown": "Denison, Texas", "bonus": 8818724, "income": 67365, "currency": "USD", "multiple": 130.9}, {"rank": 25, "pick": 19, "player": "Monroe Freeling", "team": "Carolina Panthers", "college": "Georgia", "hometown": "Charleston, South Carolina", "bonus": 11885992, "income": 92414, "currency": "USD", "multiple": 128.6}, {"rank": 26, "pick": 14, "player": "Olaivavega Ioane", "team": "Baltimore Ravens", "college": "Penn State", "hometown": "Graham, Washington", "bonus": 14331036, "income": 116862, "currency": "USD", "multiple": 122.6}, {"rank": 27, "pick": 17, "player": "Blake Miller", "team": "Detroit Lions", "college": "Clemson", "hometown": "Strongsville, Ohio", "bonus": 12584576, "income": 103253, "currency": "USD", "multiple": 121.9}, {"rank": 28, "pick": 20, "player": "Makai Lemon", "team": "Philadelphia Eagles", "college": "USC", "hometown": "Los Alamitos, California", "bonus": 11798672, "income": 97155, "currency": "USD", "multiple": 121.4}, {"rank": 29, "pick": 29, "player": "Peter Woods", "team": "Kansas City Chiefs", "college": "Clemson", "hometown": "Alabaster, Alabama", "bonus": 9700780, "income": 91357, "currency": "USD", "multiple": 106.2}, {"rank": 30, "pick": 25, "player": "Dillon Thieneman", "team": "Chicago Bears", "college": "Oregon", "hometown": "Westfield, Indiana", "bonus": 10838128, "income": 122789, "currency": "USD", "multiple": 88.3}, {"rank": 31, "pick": 28, "player": "Caleb Lomu", "team": "New England Patriots", "college": "Utah", "hometown": "Gilbert, Arizona", "bonus": 10401504, "income": 122551, "currency": "USD", "multiple": 84.9}, {"rank": 32, "pick": 27, "player": "Chris Johnson", "team": "Miami Dolphins", "college": "San Diego State", "hometown": "Eastvale, California", "bonus": 10488832, "income": 160069, "currency": "USD", "multiple": 65.5}];
+  var DATA = [{"rank": 1, "pick": 5, "player": "Arvell Reese", "team": "New York Giants", "college": "Ohio State", "hometown": "Cleveland, Ohio", "bonus": 31795564, "income": 40801, "currency": "USD", "multiple": 779.3, "home": 102000, "homes": 311.7}, {"rank": 2, "pick": 3, "player": "Jeremiyah Love", "team": "Arizona Cardinals", "college": "Notre Dame", "hometown": "St. Louis, Missouri", "bonus": 35637768, "income": 56160, "currency": "USD", "multiple": 634.6, "home": 197500, "homes": 180.4}, {"rank": 3, "pick": 1, "player": "Fernando Mendoza", "team": "Las Vegas Raiders", "college": "Indiana", "hometown": "Miami, Florida", "bonus": 38781384, "income": 62462, "currency": "USD", "multiple": 620.9, "home": 518100, "homes": 74.9}, {"rank": 4, "pick": 10, "player": "Francis Mauigoa", "team": "New York Giants", "college": "Miami", "hometown": "Ili'ili, American Samoa", "bonus": 19308428, "income": 33750, "currency": "USD", "multiple": 572.1, "home": null, "homes": null}, {"rank": 5, "pick": 4, "player": "Carnell Tate", "team": "Tennessee Titans", "college": "Ohio State", "hometown": "Chicago, Illinois", "bonus": 34240616, "income": 77902, "currency": "USD", "multiple": 439.5, "home": 334100, "homes": 102.5}, {"rank": 6, "pick": 13, "player": "Ty Simpson", "team": "Los Angeles Rams", "college": "Alabama", "hometown": "Martin, Tennessee", "bonus": 15204256, "income": 43381, "currency": "USD", "multiple": 350.5, "home": 198300, "homes": 76.7}, {"rank": 7, "pick": 26, "player": "Keylan Rutledge", "team": "Houston Texans", "college": "Georgia Tech", "hometown": "Royston, Georgia", "bonus": 10663464, "income": 34435, "currency": "USD", "multiple": 309.7, "home": 220800, "homes": 48.3}, {"rank": 8, "pick": 18, "player": "Caleb Banks", "team": "Minnesota Vikings", "college": "Florida", "hometown": "Detroit, Michigan", "bonus": 12147968, "income": 39938, "currency": "USD", "multiple": 304.2, "home": 83900, "homes": 144.8}, {"rank": 9, "pick": 6, "player": "Mansoor Delane", "team": "Kansas City Chiefs", "college": "LSU", "hometown": "Silver Spring, Maryland", "bonus": 27429444, "income": 99860, "currency": "USD", "multiple": 274.7, "home": 643300, "homes": 42.6}, {"rank": 10, "pick": 2, "player": "David Bailey", "team": "New York Jets", "college": "Texas Tech", "hometown": "Irvine, California", "bonus": 36860288, "income": 136719, "currency": "USD", "multiple": 269.6, "home": 1191500, "homes": 30.9}, {"rank": 11, "pick": 12, "player": "Kadyn Proctor", "team": "Miami Dolphins", "college": "Alabama", "hometown": "Des Moines, Iowa", "bonus": 15728176, "income": 65932, "currency": "USD", "multiple": 238.6, "home": 194700, "homes": 80.8}, {"rank": 12, "pick": 15, "player": "Rueben Bain Jr.", "team": "Tampa Bay Buccaneers", "college": "Miami", "hometown": "Miami, Florida", "bonus": 13981744, "income": 62462, "currency": "USD", "multiple": 223.8, "home": 518100, "homes": 27.0}, {"rank": 13, "pick": 7, "player": "Sonny Styles", "team": "Washington Commanders", "college": "Ohio State", "hometown": "Pickerington, Ohio", "bonus": 23936532, "income": 111833, "currency": "USD", "multiple": 214.0, "home": 339600, "homes": 70.5}, {"rank": 14, "pick": 9, "player": "Spencer Fano", "team": "Cleveland Browns", "college": "Utah", "hometown": "Spanish Fork, Utah", "bonus": 20268980, "income": 104844, "currency": "USD", "multiple": 193.3, "home": 481500, "homes": 42.1}, {"rank": 15, "pick": 31, "player": "Keldric Faulk", "team": "Tennessee Titans", "college": "Auburn", "hometown": "Highland Home, Alabama", "bonus": 9018872, "income": 48560, "currency": "USD", "multiple": 185.7, "home": 114000, "homes": 79.1}, {"rank": 16, "pick": 11, "player": "Caleb Downs", "team": "Dallas Cowboys", "college": "Ohio State", "hometown": "Hoschton, Georgia", "bonus": 17823944, "income": 97083, "currency": "USD", "multiple": 183.6, "home": 386300, "homes": 46.1}, {"rank": 17, "pick": 16, "player": "Kenyon Sadiq", "team": "New York Jets", "college": "Oregon", "hometown": "Idaho Falls, Idaho", "bonus": 12933860, "income": 73110, "currency": "USD", "multiple": 176.9, "home": 335500, "homes": 38.6}, {"rank": 18, "pick": 23, "player": "Malachi Lawrence", "team": "Dallas Cowboys", "college": "UCF", "hometown": "Louisville, Kentucky", "bonus": 11362056, "income": 66849, "currency": "USD", "multiple": 170.0, "home": 233900, "homes": 48.6}, {"rank": 19, "pick": 22, "player": "Akheem Mesidor", "team": "Los Angeles Chargers", "college": "Miami", "hometown": "Ottawa, Ontario", "bonus": 11536696, "income": 102000, "currency": "CAD", "multiple": 159.4, "home": 632200, "homes": 25.7}, {"rank": 20, "pick": 8, "player": "Jordyn Tyson", "team": "New Orleans Saints", "college": "Arizona State", "hometown": "Allen, Texas", "bonus": 20443624, "income": 130901, "currency": "USD", "multiple": 156.2, "home": 464100, "homes": 44.1}, {"rank": 21, "pick": 21, "player": "Max Iheanachor", "team": "Pittsburgh Steelers", "college": "Arizona State", "hometown": "Los Angeles, California", "bonus": 11711344, "income": 81939, "currency": "USD", "multiple": 142.9, "home": 921200, "homes": 12.7}, {"rank": 22, "pick": 30, "player": "Omar Cooper Jr.", "team": "New York Jets", "college": "Indiana", "hometown": "Indianapolis, Indiana", "bonus": 9329700, "income": 66219, "currency": "USD", "multiple": 140.9, "home": 224800, "homes": 41.5}, {"rank": 23, "pick": 24, "player": "KC Concepcion", "team": "Cleveland Browns", "college": "Texas A&M", "hometown": "Charlotte, North Carolina", "bonus": 11012760, "income": 82068, "currency": "USD", "multiple": 134.2, "home": 385700, "homes": 28.6}, {"rank": 24, "pick": 32, "player": "Jadarian Price", "team": "Seattle Seahawks", "college": "Notre Dame", "hometown": "Denison, Texas", "bonus": 8818724, "income": 67365, "currency": "USD", "multiple": 130.9, "home": 180900, "homes": 48.7}, {"rank": 25, "pick": 19, "player": "Monroe Freeling", "team": "Carolina Panthers", "college": "Georgia", "hometown": "Charleston, South Carolina", "bonus": 11885992, "income": 92414, "currency": "USD", "multiple": 128.6, "home": 509700, "homes": 23.3}, {"rank": 26, "pick": 14, "player": "Olaivavega Ioane", "team": "Baltimore Ravens", "college": "Penn State", "hometown": "Graham, Washington", "bonus": 14331036, "income": 116862, "currency": "USD", "multiple": 122.6, "home": 516700, "homes": 27.7}, {"rank": 27, "pick": 17, "player": "Blake Miller", "team": "Detroit Lions", "college": "Clemson", "hometown": "Strongsville, Ohio", "bonus": 12584576, "income": 103253, "currency": "USD", "multiple": 121.9, "home": 298300, "homes": 42.2}, {"rank": 28, "pick": 20, "player": "Makai Lemon", "team": "Philadelphia Eagles", "college": "USC", "hometown": "Los Alamitos, California", "bonus": 11798672, "income": 97155, "currency": "USD", "multiple": 121.4, "home": 1061900, "homes": 11.1}, {"rank": 29, "pick": 29, "player": "Peter Woods", "team": "Kansas City Chiefs", "college": "Clemson", "hometown": "Alabaster, Alabama", "bonus": 9700780, "income": 91357, "currency": "USD", "multiple": 106.2, "home": 261700, "homes": 37.1}, {"rank": 30, "pick": 25, "player": "Dillon Thieneman", "team": "Chicago Bears", "college": "Oregon", "hometown": "Westfield, Indiana", "bonus": 10838128, "income": 122789, "currency": "USD", "multiple": 88.3, "home": 425700, "homes": 25.5}, {"rank": 31, "pick": 28, "player": "Caleb Lomu", "team": "New England Patriots", "college": "Utah", "hometown": "Gilbert, Arizona", "bonus": 10401504, "income": 122551, "currency": "USD", "multiple": 84.9, "home": 575100, "homes": 18.1}, {"rank": 32, "pick": 27, "player": "Chris Johnson", "team": "Miami Dolphins", "college": "San Diego State", "hometown": "Eastvale, California", "bonus": 10488832, "income": 160069, "currency": "USD", "multiple": 65.5, "home": 831900, "homes": 12.6}];
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var MAX_MULT = 779.3;
 
@@ -506,8 +514,16 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
   var showAll = false;
   var sortKey = 'rank', sortDir = 1;
 
+
+  function homesCell(r){
+    if (r.homes == null){
+      return '<td class="an-td-life an-td-homes"><b>n/a</b><small>no ACS measure</small></td>';
+    }
+    var hv = (r.currency==='CAD'?'C$':'$') + r.home.toLocaleString('en-US');
+    var lbl = r.currency==='CAD' ? hv+' benchmark' : hv+' median home';
+    return '<td class="an-td-life an-td-homes"><b>\u2248 '+Math.round(r.homes)+'</b><small>'+lbl+'</small></td>';
+  }
   function rowHtml(r){
-    var w = Math.max(3, r.multiple / MAX_MULT * 100);
     return '<tr class="'+(r.rank<=3?'podium':'')+'">'+
       '<td class="an-td-rank">'+r.rank+'</td>'+
       '<td class="an-td-player"><strong>'+esc(r.player)+'</strong><small>'+esc(r.college)+'</small></td>'+
@@ -515,7 +531,9 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
       '<td>'+esc(r.hometown)+'</td>'+
       '<td class="an-td-money">'+money(r.bonus)+'</td>'+
       '<td class="an-td-income">'+incomeStr(r)+(r.currency==='CAD'?'<small>CAD</small>':'')+'</td>'+
-      '<td><div class="an-mult"><div class="an-mult-track"><div class="an-mult-fill" data-w="'+w.toFixed(1)+'"></div></div><span class="an-mult-val">'+r.multiple.toFixed(1)+'&times;</span></div></td>'+
+      '<td class="an-td-life an-td-hh"><b>'+r.multiple.toFixed(1)+'</b><small>households</small></td>'+
+      '<td class="an-td-life"><b>\u2248 '+(r.multiple/40).toFixed(1)+'</b><small>40-yr careers</small></td>'+
+      homesCell(r)+
     '</tr>';
   }
 
@@ -536,6 +554,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
     });
     rows = rows.slice().sort(function(a,b){
       var x=a[sortKey], y=b[sortKey];
+      if (x == null) x = -Infinity; if (y == null) y = -Infinity;
       if(typeof x==='string'){ return x.localeCompare(y)*sortDir; }
       return (x-y)*sortDir;
     });
@@ -580,7 +599,7 @@ tr.podium .an-mult-fill{background:linear-gradient(90deg,var(--an-green),var(--a
     var w = (r.multiple / MAX_MULT * 100).toFixed(1);
     return '<div class="an-bar-row">'+
       '<div class="an-bar-rank">'+r.rank+'</div>'+
-      '<div class="an-bar-name">'+esc(r.player)+'<small>'+esc(r.hometown)+'</small></div>'+
+      '<div class="an-bar-name">'+esc(r.player)+'<small>'+esc(r.hometown)+' \u00b7 \u2248 '+(r.multiple/40).toFixed(1)+' working lifetimes</small></div>'+
       '<div class="an-bar-track"><div class="an-bar-fill" data-w="'+w+'"></div></div>'+
       '<div class="an-bar-val">'+r.multiple.toFixed(1)+'&times;</div>'+
     '</div>';
